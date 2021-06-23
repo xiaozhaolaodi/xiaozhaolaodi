@@ -429,7 +429,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    574
+                    580
                 </div>
                 
 
@@ -455,7 +455,7 @@
 <li><p>getters：主要用来过滤数据，对应 vue 组件中的计算属性(computed)，可以在多组件之间复用</p>
 </li>
 </ul>
-<h3 id="2-为什么-mutations-中的方法必须是同步的"><a href="#2-为什么-mutations-中的方法必须是同步的" class="headerlink" title="2. 为什么 mutations 中的方法必须是同步的"></a>2. 为什么 mutations 中的方法必须是同步的</h3><ul>
+<h3 id="2-为什么-mutations-中的方法必须是同步的-在严格模式下"><a href="#2-为什么-mutations-中的方法必须是同步的-在严格模式下" class="headerlink" title="2. 为什么 mutations 中的方法必须是同步的(在严格模式下)"></a>2. 为什么 mutations 中的方法必须是同步的(在严格模式下)</h3><ul>
 <li><p>Vuex 中所有的状态更新的唯一途径都是 mutation，异步操作通过 Action 来提交 mutation 实现，这样使得我们可以方便地跟踪每一个状态的变化，从而让我们能够实现一些工具帮助我们更好地了解我们的应用。</p>
 </li>
 <li><p>每个 mutation 执行完成后都会对应到一个新的状态变更，这样 devtools 就可以打个快照存下来，然后就可以实现 time-travel 了。如果 mutation 支持异步操作，就没有办法知道状态是何时更新的，无法很好的进行状态的追踪，给调试带来困难。</p>
