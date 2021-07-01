@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>前端工程化、模块儿化、组件化</title>
+      <link href="/2021/05/01/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/"/>
+      <url>/2021/05/01/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/</url>
+      
+        <content type="html"><![CDATA[<h3 id="简单介绍一下对前端工程化、模块儿化、组件化的理解"><a href="#简单介绍一下对前端工程化、模块儿化、组件化的理解" class="headerlink" title="简单介绍一下对前端工程化、模块儿化、组件化的理解"></a>简单介绍一下对前端工程化、模块儿化、组件化的理解</h3><h4 id="前端工程化"><a href="#前端工程化" class="headerlink" title="前端工程化"></a>前端工程化</h4><ul><li><p>前端工程化是一种思想：我们拿到一个项目之后，把它当成一项系统的工程来对待，对它进行分工、组织和构建、从而达到分工明确、开发人员配合默契以及高效开发的目的；</p></li><li><p>工程化的思维就是将“结构、样式和动作” 分离：例如将静态资源放在assets和static中，将工具类的js放在utils中，将组件放在components中；</p></li></ul><h4 id="前端模块化"><a href="#前端模块化" class="headerlink" title="前端模块化"></a>前端模块化</h4><ul><li><p>前端模块儿化：可以理解为将一组功能单独提取出来，在需要使用的时候通过require()或者import引入使用，可以达到按需加载；</p></li><li><p>CSS实现模块儿化通过：scss、less、stylus;</p></li><li><p>CommonJs：将一个js文件单独提取出来，通过module.exports将内容作为模块儿导出；</p></li><li><p>Module：是es6的模块化，将js文件中的内容通过export.default作为模块儿导出，需要时通过<code>import XXX from &#39;XXX&#39;;</code>导入使用;</p></li><li><p>另外还有AMD、CMD、UMD都实现了前端模块儿化；</p></li></ul><h4 id="组件化开发"><a href="#组件化开发" class="headerlink" title="组件化开发"></a>组件化开发</h4><ul><li><p>我们熟悉的Vue、React框架都采用了组件化开发，我们清晰的体验到组件化开发的高效、便利以及代码的清晰度；</p></li><li><p>组件化相当于将一个页面视作一个容器，组件就相当于其中的头部、脚部、列表等很多东西、这些东西作为组件在需要时添加进去，组件是可以复用的，而且相互之间不会产生影响；</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 面试 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>webpack知识</title>
       <link href="/2021/04/28/webpack%E7%9F%A5%E8%AF%86/"/>
       <url>/2021/04/28/webpack%E7%9F%A5%E8%AF%86/</url>
