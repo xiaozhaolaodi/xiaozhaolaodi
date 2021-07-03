@@ -420,6 +420,10 @@
                                 <span class="chip bg-color">flex</span>
                             </a>
                         
+                            <a href="/tags/%E5%B8%83%E5%B1%80/">
+                                <span class="chip bg-color">布局</span>
+                            </a>
+                        
                     </div>
                     
                 </div>
@@ -434,6 +438,10 @@
                         
                             <a href="/categories/%E5%89%8D%E7%AB%AF/css/" class="post-category">
                                 css
+                            </a>
+                        
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/css/%E5%B8%83%E5%B1%80/" class="post-category">
+                                布局
                             </a>
                         
                     </div>
@@ -466,62 +474,62 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="弹性布局"><a href="#弹性布局" class="headerlink" title="弹性布局"></a>弹性布局</h3><h4 id="1-父级节点"><a href="#1-父级节点" class="headerlink" title="1.父级节点"></a>1.父级节点</h4><pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.parentNode</span></span><span class="token punctuation">{</span>
-    <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+                <h3 id="弹性布局"><a href="#弹性布局" class="headerlink" title="弹性布局"></a>弹性布局</h3><h4 id="1-父级节点"><a href="#1-父级节点" class="headerlink" title="1.父级节点"></a>1.父级节点</h4><pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.parentNode</span> </span><span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span class="token comment" spellcheck="true">/* 
 如果节点设置了此css属性，相当于在它的所有子节点上添加了浮动属性；
 如果父级节点使用了弹性布局，那么它的子结点就不需要添加float属性
 */</span></code></pre>
-<h4 id="2-父节点的其他属性"><a href="#2-父节点的其他属性" class="headerlink" title="2.父节点的其他属性"></a>2.父节点的其他属性</h4><h5 id="（1）justify-content"><a href="#（1）justify-content" class="headerlink" title="（1）justify-content"></a>（1）justify-content</h5><pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.parentNode</span></span><span class="token punctuation">{</span>
-    <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
-    <span class="token property">justify-content</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">/* 设置子元素水平居中 */</span>
-    <span class="token property">justify-content</span><span class="token punctuation">:</span> space-between<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 设置子元素两端对齐 */</span>
-    <span class="token property">justify-content</span><span class="token punctuation">:</span> space-around<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">/* 设置子元素都有独自的左右距离 */</span>
-    <span class="token property">justify-content</span><span class="token punctuation">:</span> flex-start<span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">/* 设置子元素水平居左，此为默认属性 */</span>
-    <span class="token property">justify-content</span><span class="token punctuation">:</span> flex-end<span class="token punctuation">;</span>      <span class="token comment" spellcheck="true">/* 设置子元素水平居右 */</span>
+<h4 id="2-父节点的其他属性"><a href="#2-父节点的其他属性" class="headerlink" title="2.父节点的其他属性"></a>2.父节点的其他属性</h4><h5 id="（1）justify-content"><a href="#（1）justify-content" class="headerlink" title="（1）justify-content"></a>（1）justify-content</h5><pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.parentNode</span> </span><span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+  <span class="token property">justify-content</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 设置子元素水平居中 */</span>
+  <span class="token property">justify-content</span><span class="token punctuation">:</span> space-between<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 设置子元素两端对齐 */</span>
+  <span class="token property">justify-content</span><span class="token punctuation">:</span> space-around<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 设置子元素都有独自的左右距离 */</span>
+  <span class="token property">justify-content</span><span class="token punctuation">:</span> flex-start<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 设置子元素水平居左，此为默认属性 */</span>
+  <span class="token property">justify-content</span><span class="token punctuation">:</span> flex-end<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 设置子元素水平居右 */</span>
 <span class="token punctuation">}</span></code></pre>
-<h5 id="（2）align-items"><a href="#（2）align-items" class="headerlink" title="（2）align-items"></a>（2）align-items</h5><pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.parentNode</span></span><span class="token punctuation">{</span>
-    <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
-    <span class="token property">align-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">/* 设置子元素垂直居中 */</span>
-    <span class="token property">align-items</span><span class="token punctuation">:</span> flex-start<span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">/* 设置子元素垂直居上 */</span>
-    <span class="token property">align-items</span><span class="token punctuation">:</span> flex-end<span class="token punctuation">;</span>      <span class="token comment" spellcheck="true">/* 设置子元素垂直居下 */</span>
+<h5 id="（2）align-items"><a href="#（2）align-items" class="headerlink" title="（2）align-items"></a>（2）align-items</h5><pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.parentNode</span> </span><span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+  <span class="token property">align-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 设置子元素垂直居中 */</span>
+  <span class="token property">align-items</span><span class="token punctuation">:</span> flex-start<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 设置子元素垂直居上 */</span>
+  <span class="token property">align-items</span><span class="token punctuation">:</span> flex-end<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 设置子元素垂直居下 */</span>
 <span class="token punctuation">}</span></code></pre>
-<h5 id="（3）align-content"><a href="#（3）align-content" class="headerlink" title="（3）align-content"></a>（3）align-content</h5><pre class=" language-css"><code class="language-css"><span class="token comment" spellcheck="true">/* 此属性只对多行子元素生效 */</span> 
-<span class="token selector"><span class="token class">.parentNode</span></span><span class="token punctuation">{</span>
-    <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
-    <span class="token property">align-content</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>          <span class="token comment" spellcheck="true">/* 设置子元素垂直居中 */</span>
-    <span class="token property">align-content</span><span class="token punctuation">:</span> flex-start<span class="token punctuation">;</span>      <span class="token comment" spellcheck="true">/* 设置子元素垂直居上 */</span>
-    <span class="token property">align-content</span><span class="token punctuation">:</span> flex-end<span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">/* 设置子元素垂直居下 */</span>
-    <span class="token property">align-content</span><span class="token punctuation">:</span> stretch<span class="token punctuation">;</span>         <span class="token comment" spellcheck="true">/* 拉伸 ，默认值 */</span> 
+<h5 id="（3）align-content"><a href="#（3）align-content" class="headerlink" title="（3）align-content"></a>（3）align-content</h5><pre class=" language-css"><code class="language-css"><span class="token comment" spellcheck="true">/* 此属性只对多行子元素生效 */</span>
+<span class="token selector"><span class="token class">.parentNode</span> </span><span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+  <span class="token property">align-content</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 设置子元素垂直居中 */</span>
+  <span class="token property">align-content</span><span class="token punctuation">:</span> flex-start<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 设置子元素垂直居上 */</span>
+  <span class="token property">align-content</span><span class="token punctuation">:</span> flex-end<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 设置子元素垂直居下 */</span>
+  <span class="token property">align-content</span><span class="token punctuation">:</span> stretch<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 拉伸 ，默认值 */</span>
 <span class="token punctuation">}</span></code></pre>
-<h5 id="（4）flex-direction"><a href="#（4）flex-direction" class="headerlink" title="（4）flex-direction"></a>（4）flex-direction</h5><pre class=" language-css"><code class="language-css"><span class="token comment" spellcheck="true">/* 此属性设置子元素的排列方向 */</span> 
-<span class="token selector"><span class="token class">.parentNode</span></span><span class="token punctuation">{</span>
-    <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
-    <span class="token property">flex-direction</span><span class="token punctuation">:</span> row<span class="token punctuation">;</span>                <span class="token comment" spellcheck="true">/* 子元素横向排列 */</span>
-    <span class="token property">flex-direction</span><span class="token punctuation">:</span> row-reverse<span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">/* 子元素横向倒序排列 */</span>
-    <span class="token property">flex-direction</span><span class="token punctuation">:</span> column<span class="token punctuation">;</span>             <span class="token comment" spellcheck="true">/* 子元素纵向排列 */</span>
-    <span class="token property">flex-direction</span><span class="token punctuation">:</span> column-reverse<span class="token punctuation">;</span>     <span class="token comment" spellcheck="true">/* 子元素纵向倒序排列 */</span>
+<h5 id="（4）flex-direction"><a href="#（4）flex-direction" class="headerlink" title="（4）flex-direction"></a>（4）flex-direction</h5><pre class=" language-css"><code class="language-css"><span class="token comment" spellcheck="true">/* 此属性设置子元素的排列方向 */</span>
+<span class="token selector"><span class="token class">.parentNode</span> </span><span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+  <span class="token property">flex-direction</span><span class="token punctuation">:</span> row<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 子元素横向排列 */</span>
+  <span class="token property">flex-direction</span><span class="token punctuation">:</span> row-reverse<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 子元素横向倒序排列 */</span>
+  <span class="token property">flex-direction</span><span class="token punctuation">:</span> column<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 子元素纵向排列 */</span>
+  <span class="token property">flex-direction</span><span class="token punctuation">:</span> column-reverse<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 子元素纵向倒序排列 */</span>
 <span class="token punctuation">}</span>
 <span class="token comment" spellcheck="true">/* 这里需要注意：当你设置了子元素纵向排列方向后，前两个属性也会随着改变方向！！！ */</span></code></pre>
-<h5 id="（5）flex-wrap"><a href="#（5）flex-wrap" class="headerlink" title="（5）flex-wrap"></a>（5）flex-wrap</h5><pre class=" language-css"><code class="language-css"><span class="token comment" spellcheck="true">/* 此属性设置子元素是否正常换行 */</span> 
-<span class="token selector"><span class="token class">.parentNode</span></span><span class="token punctuation">{</span>
-    <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
-    <span class="token property">flex-wrap</span><span class="token punctuation">:</span> wrap<span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">/* 子元素正常换行 */</span>
-    <span class="token property">flex-wrap</span><span class="token punctuation">:</span> nowrap<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">/* 子元素不换行 默认值 */</span>
+<h5 id="（5）flex-wrap"><a href="#（5）flex-wrap" class="headerlink" title="（5）flex-wrap"></a>（5）flex-wrap</h5><pre class=" language-css"><code class="language-css"><span class="token comment" spellcheck="true">/* 此属性设置子元素是否正常换行 */</span>
+<span class="token selector"><span class="token class">.parentNode</span> </span><span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+  <span class="token property">flex-wrap</span><span class="token punctuation">:</span> wrap<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 子元素正常换行 */</span>
+  <span class="token property">flex-wrap</span><span class="token punctuation">:</span> nowrap<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 子元素不换行 默认值 */</span>
 <span class="token punctuation">}</span>
 <span class="token comment" spellcheck="true">/* 这里需要注意：当你设置了子元素纵向排列方向后，前两个属性也会随着改变方向！！！ */</span></code></pre>
 <h5 id="（6）flex-flow"><a href="#（6）flex-flow" class="headerlink" title="（6）flex-flow"></a>（6）flex-flow</h5><pre class=" language-css"><code class="language-css"><span class="token comment" spellcheck="true">/* 设置子元素纵向排列正常换行 */</span>
-<span class="token selector"><span class="token class">.parentNode</span></span><span class="token punctuation">{</span>
-    <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
-    <span class="token property">flex-flow</span><span class="token punctuation">:</span> column warp<span class="token punctuation">;</span>
+<span class="token selector"><span class="token class">.parentNode</span> </span><span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+  <span class="token property">flex-flow</span><span class="token punctuation">:</span> column warp<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span class="token comment" spellcheck="true">/* 相当于（4）和（5）的组合 */</span></code></pre>
-<h4 id="3-子元素上的属性"><a href="#3-子元素上的属性" class="headerlink" title="3.子元素上的属性"></a>3.子元素上的属性</h4><pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.children</span></span><span class="token punctuation">{</span>
-    <span class="token property">flex</span><span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 用来设置每个节点的宽度，子元素在划分父级宽度的时候，会先排除固定的宽度 */</span>
-    <span class="token property">align-self</span><span class="token punctuation">:</span> flex-start<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 此属性可以覆盖父节点的align-items的垂直排列 */</span>
-    <span class="token property">flex-grow</span><span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">/* 设置元素的放大比例，默认值为0 */</span>
-    <span class="token property">order</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">/* 规定子元素的排列顺序，数值越小越靠前 默认值为0 */</span>
+<h4 id="3-子元素上的属性"><a href="#3-子元素上的属性" class="headerlink" title="3.子元素上的属性"></a>3.子元素上的属性</h4><pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.children</span> </span><span class="token punctuation">{</span>
+  <span class="token property">flex</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 用来设置每个节点的宽度，子元素在划分父级宽度的时候，会先排除固定的宽度 */</span>
+  <span class="token property">align-self</span><span class="token punctuation">:</span> flex-start<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 此属性可以覆盖父节点的align-items的垂直排列 */</span>
+  <span class="token property">flex-grow</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 设置元素的放大比例，默认值为0 */</span>
+  <span class="token property">order</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 规定子元素的排列顺序，数值越小越靠前 默认值为0 */</span>
 <span class="token punctuation">}</span></code></pre>
 
             </div>
@@ -596,6 +604,10 @@
                             
                                 <a href="/tags/flex/">
                                     <span class="chip bg-color">flex</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%B8%83%E5%B1%80/">
+                                    <span class="chip bg-color">布局</span>
                                 </a>
                             
                         </div>
