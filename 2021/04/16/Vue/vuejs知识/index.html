@@ -1,0 +1,1266 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="vuejs知识了解, Mr.Zhao">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>vuejs知识了解 | Mr.Zhao</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Mr.Zhao</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Mr.Zhao</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/xiaozhaolaodi/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/xiaozhaolaodi/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">vuejs知识了解</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                                <span class="chip bg-color">前端</span>
+                            </a>
+                        
+                            <a href="/tags/vue/">
+                                <span class="chip bg-color">vue</span>
+                            </a>
+                        
+                            <a href="/tags/%E9%9D%A2%E8%AF%95/">
+                                <span class="chip bg-color">面试</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                前端
+                            </a>
+                        
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/vue/" class="post-category">
+                                vue
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-04-16
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.9k
+                </div>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h3 id="1-谈谈对-Vue-js-的理解"><a href="#1-谈谈对-Vue-js-的理解" class="headerlink" title="1. 谈谈对 Vue.js 的理解"></a>1. 谈谈对 Vue.js 的理解</h3><ul>
+<li><p>Vue 是一套用于构建用户界面的 <strong>渐进式框架</strong>，它的目标是通过 API 实现响应数据绑定和试图更新；</p>
+</li>
+<li><p>官方对 Vue 的评价是易用性、高效性、灵活性，从这三点来看：</p>
+<ul>
+<li><p>易用性：Vue 提供了响应式数据，可以在数据改变的时候更新视图，这就令开发者只需要关心核心代码逻辑；</p>
+</li>
+<li><p>灵活性：我们的应用足够小的时候，我们只需要使用 vue 的核心库就可以了；当业务逐渐复杂的时候，可以引入 vue-router、vuex 等其他工具；</p>
+</li>
+<li><p>高效性：vue 操作的是虚拟 DOM，采用 diff 算法来更新 DOM，相比传统的 dom 操作更加高效；</p>
+</li>
+</ul>
+</li>
+<li><p>缺点：不支持 IE8 及以下版本；</p>
+</li>
+</ul>
+<h3 id="2-什么是-SPA？"><a href="#2-什么是-SPA？" class="headerlink" title="2. 什么是 SPA？"></a>2. 什么是 SPA？</h3><ul>
+<li><p>SPA 就是单页面应用，也就是只有一个 web 页面的应用</p>
+</li>
+<li><p>相对于传统的多页面应用来说：减少了应用体积、加快了页面的响应速度、降低了服务器的压力以及更好的用户体验</p>
+</li>
+<li><p>缺点：因为使用了 ajax，导致页面不利于 SEO（SEO 原则：搜索引擎的蜘蛛只识别 href 的一般超链接，而不识别 JavaScript 代码，遇到一般超链接就会爬进去，遇到 JavaScript 不会爬进去。即，搜索引擎抓不到 AJAX 动态加载的内容），但是可以通过其他技术去规避；</p>
+<ul>
+<li>服务端渲染、页面静态化</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-Vue-的生命周期"><a href="#3-Vue-的生命周期" class="headerlink" title="3. Vue 的生命周期"></a>3. Vue 的生命周期</h3><h4 id="什么是-vue-的生命周期"><a href="#什么是-vue-的生命周期" class="headerlink" title="什么是 vue 的生命周期"></a>什么是 vue 的生命周期</h4><ul>
+<li>生命周期就是 vue 实例从创建到销毁的过程</li>
+</ul>
+<h4 id="vue-的生命周期总共有几个阶段"><a href="#vue-的生命周期总共有几个阶段" class="headerlink" title="vue 的生命周期总共有几个阶段"></a>vue 的生命周期总共有几个阶段</h4><ul>
+<li>创建前、创建后、载入前、载入后、更新前、更新后、销毁前、销毁后</li>
+</ul>
+<h4 id="生命周期中钩子函数的作用"><a href="#生命周期中钩子函数的作用" class="headerlink" title="生命周期中钩子函数的作用"></a>生命周期中钩子函数的作用</h4><ul>
+<li>生命周期中有多个事件函数，它们的存在是为了让我们形成更好的开发逻辑</li>
+</ul>
+<h4 id="第一次页面加载会触发哪几个钩子函数"><a href="#第一次页面加载会触发哪几个钩子函数" class="headerlink" title="第一次页面加载会触发哪几个钩子函数"></a>第一次页面加载会触发哪几个钩子函数</h4><ul>
+<li>beforeCreate、created、beforeMount、mounted</li>
+</ul>
+<h4 id="生命周期钩子的一些使用方法"><a href="#生命周期钩子的一些使用方法" class="headerlink" title="生命周期钩子的一些使用方法"></a>生命周期钩子的一些使用方法</h4><ul>
+<li><p>beforeCreate：一般加入 loading 事件</p>
+</li>
+<li><p>created：结束 loading 事件，获取异步请求数据</p>
+</li>
+<li><p>mounted：dom 挂载完成，可以获取 dom 节点信息</p>
+</li>
+<li><p>updated：如果对数据进行了统一处理，这里写上响应函数</p>
+</li>
+<li><p>beforeDestroy：通常关闭组件中占用内存的东西，比如 setTimeout</p>
+</li>
+<li><p>nextTick：如果再修改数据之后操作 dom 的话需要在此函数内</p>
+</li>
+</ul>
+<h3 id="4-MVVM"><a href="#4-MVVM" class="headerlink" title="4. MVVM"></a>4. MVVM</h3><ul>
+<li><p>MVVM 就是 Model-View-ViewModel 的缩写</p>
+</li>
+<li><p>Model：数据模型，通常指的是后端传过来的数据；</p>
+</li>
+<li><p>View：代表 UI 组件，它负责将数据模型转换成 UI 展现出来；</p>
+</li>
+<li><p>ViewModel：是 MVVM 的核心。是连接 View 和 Model 的桥梁，用来同步 View 和 Model 的对象；</p>
+</li>
+<li><p>优点：</p>
+<ul>
+<li>分离视图 View 和数据模型 Model，降低代码耦合、以及提高了视图或逻辑的复用性；</li>
+<li>自动更新 DOM，避免了 DOM 的重复操作</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-为什么组件中的-data-必须是一个函数"><a href="#5-为什么组件中的-data-必须是一个函数" class="headerlink" title="5. 为什么组件中的 data 必须是一个函数"></a>5. 为什么组件中的 data 必须是一个函数</h3><ul>
+<li><p>因为 vue 组件是一个封装自己单独功能的模块儿，有自己的 html 模板，也应该有自己的 data</p>
+</li>
+<li><p>vue 组件不能直接访问 vue 实例上的数据，就算可以访问，那所有的参数放在 vue 实例上会显得臃肿。而且多个组件使用同一组数据的话，他们对数据的操作会影响到其他组件</p>
+</li>
+<li><p>因此 vue 组件需要自己的 data，而且必须是一个函数返回一个对象</p>
+</li>
+</ul>
+<h3 id="6-vue-的两个核心点"><a href="#6-vue-的两个核心点" class="headerlink" title="6. vue 的两个核心点"></a>6. vue 的两个核心点</h3><ul>
+<li><p>数据驱动：ViewModel，它的主要作用就是保证视图与数据一致性（也就是 vue 实现响应式的原理）</p>
+</li>
+<li><p>组件系统：组件化、页面上可以使用多个组件而且可以实现组件复用、令 vue 开发更加灵活</p>
+</li>
+</ul>
+<h3 id="7-vue-父子组件的通讯"><a href="#7-vue-父子组件的通讯" class="headerlink" title="7. vue 父子组件的通讯"></a>7. vue 父子组件的通讯</h3><ul>
+<li><p>父组件通过属性传递数据到子组件，子组件通过 props 接收参数；</p>
+</li>
+<li><p>子组件通过$emit 向父组件传递参数，父组件通过事件接收参数；</p>
+</li>
+<li><p>兄弟组件不能通过这种方式，因为他们之间没有任何可以相互依赖的关系；实现通讯的话就需要借助第三方：</p>
+<ul>
+<li>eventBus：建立一个事件中心来传递事件，进行数据传递</li>
+<li>Vuex：全局状态管理，所有组件都可以调用状态（数据）</li>
+</ul>
+</li>
+</ul>
+<h3 id="8-函数式组件的优势"><a href="#8-函数式组件的优势" class="headerlink" title="8. 函数式组件的优势"></a>8. 函数式组件的优势</h3><ul>
+<li>渲染开销特别小、因为它只是一个函数，没有状态没有实例</li>
+</ul>
+<h3 id="9-vue-的事件修饰符"><a href="#9-vue-的事件修饰符" class="headerlink" title="9. vue 的事件修饰符"></a>9. vue 的事件修饰符</h3><ul>
+<li><p>.stop：用来阻止事件冒泡；</p>
+</li>
+<li><p>.prevent：阻止组件本来应该发生的事件，常用于 a 标签事件；</p>
+</li>
+<li><p>.capture：将冒泡事件顺序改变，必须放在最外层进行修饰；</p>
+</li>
+<li><p>.once：用来修饰事件响应较慢但不能多次触发，只能触发一次的事件；</p>
+</li>
+<li><p>.self：只有点击当前自身元素才触发的修饰符；</p>
+</li>
+</ul>
+<h3 id="10-vue-自定义指令的原理"><a href="#10-vue-自定义指令的原理" class="headerlink" title="10. vue 自定义指令的原理"></a>10. vue 自定义指令的原理</h3><ul>
+<li><p>本质上相当于装饰器，是 vue 对 html 的扩展，语义化 html，也就是在 vue 编译 dom 时，找到指令所修饰的对象，执行指令中的 js 代码</p>
+</li>
+<li><p>生命周期钩子：bind、inserted、update、componentUpdated、unbind</p>
+</li>
+</ul>
+<h3 id="11-vue-为什么要采用异步更新"><a href="#11-vue-为什么要采用异步更新" class="headerlink" title="11. vue 为什么要采用异步更新"></a>11. vue 为什么要采用异步更新</h3><ul>
+<li><p>异步更新是指：本轮数据更新结束之后，再去更新视图；</p>
+</li>
+<li><p>vue 的更新是组件级更新，每次更新都会渲染整个组件，如果使用同步更新的话，只要 data 的数据发生变化就会触发 watcher，然后对应 watcher 下的 update 方法更新视图，这样就会导致组件更新特别频繁，资源浪费；</p>
+</li>
+<li><p>vue 异步更新流程</p>
+<ul>
+<li><p>当 data 数据发生变化时，会触发 dep.notify() 通知 watcher 执行 update();</p>
+</li>
+<li><p>调用 queueWatcher 将 watcher 去重后加入队列等待执行；</p>
+</li>
+<li><p>在 nextTick 的回调 flushSchedulerQueue 内将刚刚加入的 watcher 逐个执行 run 进行更新；</p>
+</li>
+<li><p>最后执行 restSchedulerState()重置状态等待下一轮更新</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="12-vue3-的-proxy-与-vue2-的-Object-defineProperty-的对比"><a href="#12-vue3-的-proxy-与-vue2-的-Object-defineProperty-的对比" class="headerlink" title="12. vue3 的 proxy()与 vue2 的 Object.defineProperty()的对比"></a>12. vue3 的 proxy()与 vue2 的 Object.defineProperty()的对比</h3><ul>
+<li><p>proxy</p>
+<ul>
+<li>proxy 可以直接监听对象，而不仅仅是属性；</li>
+<li>proxy 也可以直接监听数组的变化；</li>
+<li>proxy 可以返回一个新对象，可以操作新对象来达到目的，而 Object.defineProperty 只能遍历属性进行修改；</li>
+<li>proxy 作为新标准，将会受到各个浏览器厂商的持续优化</li>
+</ul>
+</li>
+<li><p>Object.defineProperty</p>
+<ul>
+<li>Object.defineProperty()兼容 IE9 版本</li>
+</ul>
+</li>
+</ul>
+<h3 id="13-子组件为什么不能修改父组件传递的-prop"><a href="#13-子组件为什么不能修改父组件传递的-prop" class="headerlink" title="13. 子组件为什么不能修改父组件传递的 prop"></a>13. 子组件为什么不能修改父组件传递的 prop</h3><ul>
+<li>Vue 中提倡的是单向数据流，父组件修改了 props 的时候是会流向子组件的，反过来就不行，为了防止子组件意外的更新了父组件的状态，如果破坏了单向数据流，那么当应用复杂的时候，debug 的成本会非常高</li>
+</ul>
+<h3 id="14-使用-v-for-的时候为什么要用-key"><a href="#14-使用-v-for-的时候为什么要用-key" class="headerlink" title="14. 使用 v-for 的时候为什么要用 key"></a>14. 使用 v-for 的时候为什么要用 key</h3><ul>
+<li>key 的唯一性，它的存在可以让 diff 算法更快的找到需要更新的 dom 节点，注意：key 一定要唯一，否则可能会出现一些特别隐蔽的更新异常；</li>
+</ul>
+<h3 id="15-为什么不建议-v-for-和-v-if-同时使用"><a href="#15-为什么不建议-v-for-和-v-if-同时使用" class="headerlink" title="15. 为什么不建议 v-for 和 v-if 同时使用"></a>15. 为什么不建议 v-for 和 v-if 同时使用</h3><ul>
+<li><p>因为 v-for 的优先级高于 v-if，表示每一次遍历都会通过 v-if 进行判断，如果需要遍历的数组长度特别大，就会造成很严重的性能浪费；</p>
+</li>
+<li><p>因此遇到这种情况的话我一般会先用 computed 进行数据的筛选之后遍历</p>
+</li>
+</ul>
+<h3 id="16-keep-alive-的作用以及什么时候使用"><a href="#16-keep-alive-的作用以及什么时候使用" class="headerlink" title="16. keep-alive 的作用以及什么时候使用"></a>16. keep-alive 的作用以及什么时候使用</h3><ul>
+<li><p>keep-alive：是 vue 内置的一个组件，它可以使被包含的组件保留状态，当组件切换的时候避免重新渲染；</p>
+</li>
+<li><p>props:</p>
+<ul>
+<li>include：字符串或正则表达式。只有匹配的组件会被缓存。</li>
+<li>exclude：字符串或正则表达式。任何匹配的组件都不会被缓存。</li>
+</ul>
+</li>
+<li><p>当组件在 keep-alive 内被切换，它的 activated 和 deactivated 这两个生命周期钩子函数将会被对应执行。<strong>主要用于保留组件状态或避免重新渲染</strong>。</p>
+</li>
+<li><p>keep-alive 不会在函数式组件中正常工作，因为它们没有缓存实例。</p>
+</li>
+</ul>
+<h3 id="17-vue-的模板编译"><a href="#17-vue-的模板编译" class="headerlink" title="17. vue 的模板编译"></a>17. vue 的模板编译</h3><ul>
+<li><p>模板编译的作用：是生成渲染函数–&gt;执行渲染函数生成最新的 vnode–&gt;根据 vnode 来渲染 dom</p>
+</li>
+<li><p>渲染函数的生成过程：首先将模板编译成 AST(抽象语法树)，然后遍历 AST 将其中的静态节点进行标记，最后根据 AST 生成渲染函数</p>
+</li>
+</ul>
+<h3 id="18-scoped-的实现及原理"><a href="#18-scoped-的实现及原理" class="headerlink" title="18. scoped 的实现及原理"></a>18. scoped 的实现及原理</h3><ul>
+<li><p>为了避免 css 样式的污染，vue 组件中给 css 提供了 scoped 来实现样式私有化、模块化</p>
+</li>
+<li><p>包含 scoped 的组件的所有节点都会有一个唯一的标识（[data-v-xxxxx]）</p>
+</li>
+<li><p>包含 scoped 组件中的所有样式选择器后面会加上节点上的那个唯一标识</p>
+</li>
+</ul>
+<h3 id="19-SPA-首次进入页面出现白屏的原因以及解决方法"><a href="#19-SPA-首次进入页面出现白屏的原因以及解决方法" class="headerlink" title="19. SPA 首次进入页面出现白屏的原因以及解决方法"></a>19. SPA 首次进入页面出现白屏的原因以及解决方法</h3><ul>
+<li><p>因为 SPA 运行时浏览器会在进入应用的时候下载所有需要的资源，当资源过多时就会出现白屏的情况；</p>
+</li>
+<li><p>解决方法：采用图片懒加载、路由懒加载以及组件按需引入的方式</p>
+</li>
+</ul>
+<h3 id="20-vue-项目的行能优化"><a href="#20-vue-项目的行能优化" class="headerlink" title="20. vue 项目的行能优化"></a>20. vue 项目的行能优化</h3><ul>
+<li><p>不要在模板中写过多表达式</p>
+</li>
+<li><p>在循环调用子组件时要用 key</p>
+</li>
+<li><p>页面上频繁切换的情况用 v-show、很少切换的用 v-if</p>
+</li>
+<li><p>尽量少用 float、可以使用 flex</p>
+</li>
+<li><p>使用组件的按需加载 require 和 import 的方式</p>
+</li>
+<li><p>路由懒加载和图片懒加载</p>
+</li>
+</ul>
+<h3 id="21-slot-插槽的作用"><a href="#21-slot-插槽的作用" class="headerlink" title="21. slot 插槽的作用"></a>21. slot 插槽的作用</h3><ul>
+<li>简单来说，假如父组件需要在子组件内放一些 DOM，那么这些 DOM 是显示、不显示、在哪个地方显示、如何显示，就是 slot 分发负责的活</li>
+</ul>
+<h3 id="22-slot-的种类"><a href="#22-slot-的种类" class="headerlink" title="22. slot 的种类"></a>22. slot 的种类</h3><ul>
+<li><p>匿名插槽：最简单常用的插槽子组件中只需要<code>&lt;slot&gt;&lt;/slot&gt;</code>就行了，父组件在组件内部放入内容；</p>
+</li>
+<li><p>具名插槽：子组件在<code>&lt;slot name=&quot;header&quot;&gt;&lt;/slot&gt;</code>中加入 name 属性，父组件<code>&lt;template v-slot:header&gt;&lt;/template&gt;</code></p>
+</li>
+<li><p>作用域插槽：当父组件想要控制子组件显示子组件 data 中的数据时，需要用的作用于插槽，将子组件的数据传入父组件</p>
+</li>
+</ul>
+<pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 子组件</span>
+<span class="token operator">&lt;</span>slot v<span class="token operator">-</span>bind<span class="token punctuation">:</span>user<span class="token operator">=</span><span class="token string">"userInfo"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>slot<span class="token operator">></span>
+<span class="token comment" spellcheck="true">// 父组件</span>
+<span class="token operator">&lt;</span>template v<span class="token operator">-</span>slot<span class="token operator">=</span><span class="token string">"user"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">></span></code></pre>
+<h3 id="23-简单说一下封装组件的过程"><a href="#23-简单说一下封装组件的过程" class="headerlink" title="23. 简单说一下封装组件的过程"></a>23. 简单说一下封装组件的过程</h3><ul>
+<li><p>先把组件的架子搭起来：html + js + css，然后思考逻辑</p>
+</li>
+<li><p>准备好组件的数据输入，也就是定好 props 的数据以及类型</p>
+</li>
+<li><p>准备好数据输出，就是向父组件传递的结果</p>
+</li>
+<li><p>引入注册使用</p>
+</li>
+</ul>
+<h3 id="24-vue-组件的渲染和更新"><a href="#24-vue-组件的渲染和更新" class="headerlink" title="24. vue 组件的渲染和更新"></a>24. vue 组件的渲染和更新</h3><ul>
+<li><p>初次渲染</p>
+<ul>
+<li>将模板解析为 render 函数；</li>
+<li>触发响应式，将 data 中的数据通过 Object.defineProperty 的 getter 进行依赖收集；</li>
+<li>执行 render 函数，生成 vnode，渲染视图（patch）</li>
+</ul>
+</li>
+<li><p>组件更新</p>
+<ul>
+<li>修改 data 中的数据，触发 setter 中的 dep.notify(),通知所有的 watcher 对象进行视图更新；</li>
+<li>重新执行 render 函数，生成新的虚拟节点；</li>
+<li>最后进行 patch 过程（diff 算法）</li>
+</ul>
+</li>
+</ul>
+<h3 id="25-为什么使用异步组件"><a href="#25-为什么使用异步组件" class="headerlink" title="25. 为什么使用异步组件"></a>25. 为什么使用异步组件</h3><ul>
+<li><p>异步组件可以优化打包结果，将异步组件分开打包，实现异步加载，可以有效地解决组件过大的问题，如果不使用异步组件，打包出来之后会出现首屏加载过慢甚至白屏的出现；</p>
+</li>
+<li><p>按需加载组件，组件定义的时候什么都不做，当组件第一次使用的时候再进行渲染，渲染之后会缓存下来方便之后的使用；</p>
+</li>
+<li><p>提升用户体验，优化项目性能</p>
+</li>
+</ul>
+<h3 id="26-diff-算法的作用"><a href="#26-diff-算法的作用" class="headerlink" title="26. diff 算法的作用"></a>26. diff 算法的作用</h3><ul>
+<li>vue 中数据的双向绑定实现了修改数据的时候，自动更新视图的功能，而且是只更新需要更新的地方；也就是数据发生变化的时候，会根据新数据生成新的 vdom，通过对比新旧 vdom 来更新 dom，dom-diff 做的就是这些事</li>
+</ul>
+<h3 id="27-DOM-diff-做了哪些事儿"><a href="#27-DOM-diff-做了哪些事儿" class="headerlink" title="27. DOM-diff 做了哪些事儿"></a>27. DOM-diff 做了哪些事儿</h3><ul>
+<li><p>DOM-diff 也叫 patch，打补丁的意思，核心思想就是将旧的 VNode 通过修补得到新的 VNode，然后更新 dom，总而言之，它干了三件事儿：新增节点、删除节点、更新节点；</p>
+<ul>
+<li><p>创建节点：VNode 类中有六种节点，但实际上能够被创建的节点只有三种：元素节点、注释节点、文本节点</p>
+<ul>
+<li>首先判断该节点是不是元素节点，只需要判断 vnode 中是否含有 tag 标签，如果包含那么一定是元素节点，调用 createElement 方法创建节点，然后创建子结点最后插入到 dom 中</li>
+<li>判断是不是注释节点，在 VNode 类中对注释节点有一个特殊的标记 isComment，我们只需要判断 isComment 是否为 true，如果是就调用 createComment 方法来创建注释节点，最后插入 dom 中</li>
+<li>判断是不是文本节点，如果前两种都不符合的话就调用 createTextNode 方法创建文本节点，最后插入 dom</li>
+</ul>
+</li>
+<li><p>删除节点：如果新的 VDOM 上没有的节点，而旧的 VDOM 上有的话，我们就需要把这些节点从旧的 VDOM 上删除，我们只需要调用被删除节点的父节点的 removeChild 方法</p>
+</li>
+<li><p>更新节点：更新之前我们需要将新旧 dom 进行对比，当遇到静态节点时候直接返回，因为静态节点是不会因为数据的改变而发生变化的</p>
+<ul>
+<li>如果新旧 VNode 是文本节点的话，就调用 setTextNode 方法来修改文本内容</li>
+<li>如果 VNode 是元素节点的话，分两种情况：<ul>
+<li>该节点包含子节点<ul>
+<li>如果新节点包含子节点的话，就看旧节点是否包含子节点，如果旧节点包含子节点，那就通过递归来对比子节点并更新；如果就节点不包含子节点，那么这个旧节点有可能是空节点或者是文本节点，如果旧的节点是空节点就把新的节点里的子节点创建一份然后插入到旧的节点里面，如果旧的节点是文本节点，则把文本清空，然后把新的节点里的子节点创建一份然后插入到旧的节点里面。</li>
+</ul>
+</li>
+<li>该节点不包含子节点<ul>
+<li>如果该节点不包含子节点，同时它又不是文本节点，那就说明该节点是个空节点，那就好办了，不管旧节点之前里面都有啥，直接清空即可。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="28-vue-中为什么要使用虚拟（Virtual）DOM"><a href="#28-vue-中为什么要使用虚拟（Virtual）DOM" class="headerlink" title="28. vue 中为什么要使用虚拟（Virtual）DOM"></a>28. vue 中为什么要使用虚拟（Virtual）DOM</h3><ul>
+<li><p>创建真实 DOM 的成本高：真实 dom 的节点的属性有很多，而虚拟 dom 的节点只需要实现几个必要的属性就可以了，成本低很多</p>
+</li>
+<li><p>如果不使用 VDOM，频繁操作 dom 的时候会多次进行页面的回流和重绘，使用 VDOM 的话，让一次数据变动产生的所有 node 变化，通过 diff 算法对 vnode 进行修改，最后只需要对 DOM tree 进行一次修改，减少回流和重绘，提高性能；</p>
+</li>
+<li><p>VDOM 本质上是一个 js 对象，因此天生就具有跨平台的能力，可以实现在不同平台的准确使用</p>
+</li>
+</ul>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Mr Zhao</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://mrzhao.life/2021/04/16/Vue/vuejs%E7%9F%A5%E8%AF%86/">https://mrzhao.life/2021/04/16/Vue/vuejs%E7%9F%A5%E8%AF%86/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Mr Zhao</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                                    <span class="chip bg-color">前端</span>
+                                </a>
+                            
+                                <a href="/tags/vue/">
+                                    <span class="chip bg-color">vue</span>
+                                </a>
+                            
+                                <a href="/tags/%E9%9D%A2%E8%AF%95/">
+                                    <span class="chip bg-color">面试</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="qq,wechat,weibo" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2021/04/22/Vue/vue-router%E7%9F%A5%E8%AF%86/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="vue-router知识">
+                        
+                        <span class="card-title">vue-router知识</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            1. vue-router 的跳转和 location.href 跳转的区别？
+location.href 跳转虽然简单方便，但是每次跳转的是页面，需要刷新页面；
+
+vue-router 跳转是采用了 diff 算法实现了按需加载，减少了 
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-22
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
+                                </a>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/vue/" class="post-category">
+                                    vue
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                        <span class="chip bg-color">前端</span>
+                    </a>
+                    
+                    <a href="/tags/vue-router/">
+                        <span class="chip bg-color">vue-router</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/03/28/Vue/vue3-reactive/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="vue3.x的响应式原理">
+                        
+                        <span class="card-title">vue3.x的响应式原理</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Vue3的响应式是通过ES6的 Proxy 实现的
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-28
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
+                                </a>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/vue/" class="post-category">
+                                    vue
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                        <span class="chip bg-color">前端</span>
+                    </a>
+                    
+                    <a href="/tags/vue3/">
+                        <span class="chip bg-color">vue3</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">Mr Zhao</a>
+            |&nbsp;<a href="https://beian.miit.gov.cn/" target="_blank">豫ICP备20021275号</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis"><!--
+ * @Description: 
+ * @Author: Zhao
+ * @Date: 2020-08-04 08:30:06
+ * @LastEditTime: 2020-08-04 09:50:58
+ * @LastEditors:  
+-->
+
+    <a href="https://github.com/xiaozhaolaodi" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1813845216" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1813845216" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

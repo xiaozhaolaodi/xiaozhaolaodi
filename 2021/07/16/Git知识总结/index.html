@@ -1,0 +1,1437 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Git知识总结, Mr.Zhao">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Git知识总结 | Mr.Zhao</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Mr.Zhao</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Mr.Zhao</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/xiaozhaolaodi/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/xiaozhaolaodi/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Git知识总结</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">
+                                <span class="chip bg-color">版本控制</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/" class="post-category">
+                                版本控制
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-07-16
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    9.4k
+                </div>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1.简介"></a>1.简介</h2><h3 id="1-1git-定义"><a href="#1-1git-定义" class="headerlink" title="1.1git 定义"></a>1.1git 定义</h3><p>​ git 是一个免费的分布式版本控制系统，旨在快速高效地处理从小型到大型项目的所有事物。</p>
+<p>不管是软件开发还是什么行业，代码、文档都不是一次性写完的，都需要有无数次的修改，无数个版本迭代，而 Git 是一个很好的版本管理工具。这次写的不满意，可以直接回滚到自己想要的版本。</p>
+<p>​ Git 的作者是 Linus ，没错，就是写了 Linux 系统的那个大佬 Linus，是他花了两周的时间用 C 写了这款分布式版本控制系统，狠人就是狠人啊,现在基本上就是最大的分布式版本管理系统了。</p>
+<h3 id="1-2Github-和码云"><a href="#1-2Github-和码云" class="headerlink" title="1.2Github 和码云"></a>1.2Github 和码云</h3><p>​ Github 是一个是一个用 git 做版本控制的项目托管平台，同样的中国还有码云。两者都是使用 git 做版本控制的项目托管平台，说白了，就是一个代码仓库。</p>
+<p>​ Github 与 码云其实在功能使用上并没有什么大的区别，比较显著的区别， Github 是全球最大的代码托管仓库，资源丰富，一句话说就是只有你想不到，没有他做不到的。代码资源十分丰富，但是有些不可名状的原因，导致了其网速有点那啥，但是还是可以用的。码云相对来说资源并没有那么丰富，但是好在其是国内的代码仓库，速度相对来说稍微好一些。</p>
+<p>​ 还有就是都提供了免费的静态网页功能，可以通过其规定特定的特殊，域名访问网站。还有应该是近来出现不久的免费的功能，免费的私有仓库，之前在 Github 上，要建私有仓库是需要花钱的。</p>
+<p>​ 有一个挺不错的方法就是拿 Github 当作自己的网盘，平时来存储一些文件什么的还是挺不错的，当然了，还是有限制的，单个文件不能超过 100M ，然后每个项目不能超过 1G。其实一般来说足够了，毕竟是免费的。</p>
+<p>​ <strong>简单来说， Git 是一种方法。而 GitHub 只是使用这种方法的一个代码仓库。方法只有一个，而采用这种方法的却又很多个，类似 Github 和码云的还有 Gitlab 等。</strong></p>
+<h2 id="2-Git-和-Svn-区别"><a href="#2-Git-和-Svn-区别" class="headerlink" title="2.Git 和 Svn 区别"></a>2.Git 和 Svn 区别</h2><h3 id="2-1Svn"><a href="#2-1Svn" class="headerlink" title="2.1Svn"></a>2.1Svn</h3><p>​ SVN 是集中式版本控制系统，版本库是集中放在中央服务器的，而开发人员工作的时候，用的都是自己的电脑，所以首先要从中央服务器下载最新的版本，然后开发，开发完后，需要把自己开发的代码提交到中央服务器。</p>
+<p>​ 集中式版本控制工具缺点：服务器单点故障, 容错性差</p>
+<p><img src="/2021/07/16/Git%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/image-20210323112415151.png" alt="image-20210323112415151"></p>
+<h3 id="2-2Git"><a href="#2-2Git" class="headerlink" title="2.2Git"></a>2.2Git</h3><h4 id="2-2-1-说明"><a href="#2-2-1-说明" class="headerlink" title="2.2.1 说明"></a>2.2.1 说明</h4><p>​ Git 是分布式版本控制系统（Distributed Version Control System，简称 DVCS） ，分为两种类型的仓库(本地仓库和远程仓库)。</p>
+<p>​ 本地仓库：是在开发人员自己电脑上的 Git 仓库<br>​ 远程仓库：是在远程服务器上的 Git 仓库</p>
+<p>​ Clone：克隆，就是将远程仓库复制到本地<br>​ Push：推送，就是将本地仓库代码上传到远程仓库<br>​ Pull：拉取，就是将远程仓库代码下载到本地仓库<br><img src="/2021/07/16/Git%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/image-20210323112556941.png" alt="image-20210323112556941"></p>
+<h4 id="2-2-2-工作流程"><a href="#2-2-2-工作流程" class="headerlink" title="2.2.2 工作流程"></a>2.2.2 工作流程</h4><p>工作流程如下：<br>1．从远程仓库中克隆代码到本地仓库<br>2．从本地仓库中 checkout 代码然后进行代码修改<br>3．在提交前先将代码提交到暂存区<br>4．提交到本地仓库。本地仓库中保存修改的各个历史版本<br>5．修改完成后，需要和团队成员共享代码时，将代码 push 到远程仓库</p>
+<p><img src="/2021/07/16/Git%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/image-20210323112802541.png" alt="image-20210323112802541"></p>
+<h2 id="3-安装下载"><a href="#3-安装下载" class="headerlink" title="3.安装下载"></a>3.安装下载</h2><h4 id="3-1Linux-平台上安装"><a href="#3-1Linux-平台上安装" class="headerlink" title="3.1Linux 平台上安装"></a>3.1Linux 平台上安装</h4><h5 id="3-1-1Debian-Ubuntu"><a href="#3-1-1Debian-Ubuntu" class="headerlink" title="3.1.1Debian/Ubuntu"></a>3.1.1Debian/Ubuntu</h5><pre class=" language-sh"><code class="language-sh">#1.Debian/Ubuntu Git 安装命令为：
+$ apt-get install libcurl4-gnutls-dev libexpat1-dev gettext \
+  libz-dev libssl-dev
+
+$ apt-get install git
+
+$ git --version
+git version 1.8.1.2
+
+#2.Debian/Ubuntu Git 源码安装方式 最新源码包下载地址：https://git-scm.com/download
+$ apt-get install libcurl4-gnutls-dev libexpat1-dev gettext \
+  libz-dev libssl-dev
+
+$ tar -zxf git-1.7.2.2.tar.gz
+$ cd git-1.7.2.2
+$ make prefix=/usr/local all
+$ sudo make prefix=/usr/local install</code></pre>
+<h5 id="3-1-2Centos-RedHat"><a href="#3-1-2Centos-RedHat" class="headerlink" title="3.1.2Centos/RedHat"></a>3.1.2Centos/RedHat</h5><pre class=" language-sh"><code class="language-sh">#1.命令安装
+$ yum install curl-devel expat-devel gettext-devel \
+  openssl-devel zlib-devel
+
+$ yum -y install git-core
+
+$ git --version
+git version 1.7.1
+
+#2.源码安装方式 最新源码包下载地址：https://git-scm.com/download
+$ yum install curl-devel expat-devel gettext-devel \
+  openssl-devel zlib-
+
+$ tar -zxf git-1.7.2.2.tar.gz
+$ cd git-1.7.2.2
+$ make prefix=/usr/local all
+$ sudo make prefix=/usr/local install</code></pre>
+<h4 id="3-2-下载安装"><a href="#3-2-下载安装" class="headerlink" title="3.2 下载安装"></a>3.2 下载安装</h4><p>下载链接:<a href="https://git-scm.com/download" target="_blank" rel="noopener">https://git-scm.com/download</a></p>
+<p><img src="/2021/07/16/Git%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/image-20210323112938347.png" alt="image-20210323112938347"></p>
+<p>安装完成后在电脑桌面（也可以是其他目录）点击右键，如果能够看到如下两个菜单则说明 Git 安装成功。</p>
+<p><img src="/2021/07/16/Git%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/image-20210323113735053.png" alt="image-20210323113735053"></p>
+<p><strong>Git GUI：Git 提供的图形界面工具<br>Git Bash：Git 提供的命令行工具</strong></p>
+<h2 id="4-Git-使用步骤"><a href="#4-Git-使用步骤" class="headerlink" title="4.Git 使用步骤"></a>4.Git 使用步骤</h2><h3 id="4-1-常用的-Git-代码托管服务"><a href="#4-1-常用的-Git-代码托管服务" class="headerlink" title="4.1 常用的 Git 代码托管服务"></a>4.1 常用的 Git 代码托管服务</h3><pre class=" language-sh"><code class="language-sh">#前面我们已经知道了Git中存在两种类型的仓库，即本地仓库和远程仓库。那么我们如何搭建Git远程仓库呢？我们可以借助互联网上提供的一些代码托管服务来实现，其中比较常用的有GitHub、码云、GitLab等。
+
+gitHub（ 地址：https://github.com/ ）是一个面向开源及私有软件项目的托管平台，因为只支持Git 作为唯一的版本库格式进行托管，故名gitHub
+
+码云（地址： https://gitee.com/ ）是国内的一个代码托管平台，由于服务器在国内，所以相比于GitHub，码云速度会更快
+
+GitLab （地址： https://about.gitlab.com/ ）是一个用于仓库管理系统的开源项目，使用Git作为代码管理工具，并在此基础上搭建起来的web服务</code></pre>
+<h3 id="4-2-以码云为例创建项目"><a href="#4-2-以码云为例创建项目" class="headerlink" title="4.2 以码云为例创建项目"></a>4.2 以码云为例创建项目</h3><p><img src="/2021/07/16/Git%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/image-20210323114455106.png" alt="image-20210323114455106"></p>
+<p>说明：readme 文件是用来描述这个项目的，里面用 md 格式编写，然后能展示在项目的下面的。</p>
+<p>例如：<img src="/2021/07/16/Git%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/image-20210323145316575.png" alt="image-20210323145316575"></p>
+<p>-</p>
+<h2 id="5-Git-安装配置"><a href="#5-Git-安装配置" class="headerlink" title="5.Git 安装配置"></a>5.Git 安装配置</h2><h3 id="5-1git-配置"><a href="#5-1git-配置" class="headerlink" title="5.1git 配置"></a>5.1git 配置</h3><p><strong>Git 提供了一个叫做 git config 的工具，专门用来配置或读取相应的工作环境变量。</strong></p>
+<p><strong>这些环境变量，决定了 Git 在各个环节的具体工作方式和行为。这些变量可以存放在以下三个不同的地方：</strong></p>
+<ul>
+<li><strong><code>/etc/gitconfig</code> 文件：系统中对所有用户都普遍适用的配置。若使用 <code>git config</code> 时用 <code>--system</code> 选项，读写的就是这个文件。</strong></li>
+<li><strong><code>~/.gitconfig</code> 文件：用户目录下的配置文件只适用于该用户。若使用 <code>git config</code> 时用 <code>--global</code> 选项，读写的就是这个文件。</strong></li>
+<li><strong>当前项目的 Git 目录中的配置文件（也就是工作目录中的 <code>.git/config</code> 文件）：这里的配置仅仅针对当前项目有效。每一个级别的配置都会覆盖上层的相同配置，所以 <code>.git/config</code> 里的配置会覆盖 <code>/etc/gitconfig</code> 中的同名变量。</strong></li>
+</ul>
+<p><strong>在 Windows 系统上，Git 会找寻用户主目录下的 .gitconfig 文件。主目录即 $HOME 变量指定的目录，一般都是 C:\Documents and Settings$USER。</strong></p>
+<p><strong>此外，Git 还会尝试找寻 /etc/gitconfig 文件，只不过看当初 Git 装在什么目录，就以此作为根目录来定位。</strong></p>
+<h4 id="5-1-1-用户信息"><a href="#5-1-1-用户信息" class="headerlink" title="5.1.1 用户信息"></a>5.1.1 用户信息</h4><p><strong>配置个人的用户名称和电子邮件地址：</strong></p>
+<pre class=" language-sh"><code class="language-sh">#当安装Git后首先要做的事情是设置用户名称和email地址。这是非常重要的，因为每次Git提交都会使用该用户信息
+
+#1.设置用户信息
+git config --global user.name “itcast”
+git config --global user.email “kinggm520@163.com”
+    如果用了 --global 选项，那么更改的配置文件就是位于你用户主目录下的那个，以后你所有的项目都会默认使用这里配置的用户信息。
+    如果要在某个特定的项目中使用其他名字或者电邮，只要去掉 --global 选项重新配置即可，新的设定保存在当前项目的 .git/config 文件里。这样只有这个项目使用这个信息。</code></pre>
+<h4 id="5-1-2-编辑个人信息"><a href="#5-1-2-编辑个人信息" class="headerlink" title="5.1.2 编辑个人信息"></a>5.1.2 编辑个人信息</h4><pre class=" language-sh"><code class="language-sh">编辑 git 配置文件:
+$ git config -e    # 针对当前仓库
+
+或者：
+$ git config -e --global   # 针对系统上所有仓库</code></pre>
+<h4 id="5-1-3-文本编辑器"><a href="#5-1-3-文本编辑器" class="headerlink" title="5.1.3 文本编辑器"></a>5.1.3 文本编辑器</h4><pre class=" language-sh"><code class="language-sh">#设置Git默认使用的文本编辑器, 一般可能会是 Vi 或者 Vim。如果你有其他偏好，比如 Emacs 的话，可以重新设置：
+$ git config --global core.editor emacs</code></pre>
+<h4 id="5-1-4-查看配置信息"><a href="#5-1-4-查看配置信息" class="headerlink" title="5.1.4 查看配置信息"></a>5.1.4 查看配置信息</h4><pre class=" language-sh"><code class="language-sh">#1.查看配置信息
+git config --list
+git config user.name</code></pre>
+<h2 id="6-Git-工作流程"><a href="#6-Git-工作流程" class="headerlink" title="6.Git 工作流程"></a>6.Git 工作流程</h2><p>一般工作流程如下：</p>
+<ul>
+<li>克隆 Git 资源作为工作目录。</li>
+<li>在克隆的资源上添加或修改文件。</li>
+<li>如果其他人修改了，你可以更新资源。</li>
+<li>在提交前查看修改。</li>
+<li>提交修改。</li>
+<li>在修改完成后，如果发现错误，可以撤回提交并再次修改并提交。</li>
+</ul>
+<p>工作流程图：</p>
+<p><img src="/2021/07/16/Git%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/image-20210425141221210.png" alt="image-20210425141221210"></p>
+<h2 id="7-git-图解本地工作区·缓存区·本地仓库·远程仓库"><a href="#7-git-图解本地工作区·缓存区·本地仓库·远程仓库" class="headerlink" title="7. git 图解本地工作区·缓存区·本地仓库·远程仓库"></a>7. git 图解本地工作区·缓存区·本地仓库·远程仓库</h2><ul>
+<li><strong>工作区：</strong>就是你在电脑里能看到的目录。</li>
+<li><strong>暂存区：</strong>英文叫 stage 或 index。一般存放在 <strong>.git</strong> 目录下的 index 文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。</li>
+<li><strong>版本库：</strong>工作区有一个隐藏目录 <strong>.git</strong>，这个不算工作区，而是 Git 的版本库。</li>
+</ul>
+<p><img src="/2021/07/16/Git%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/image-20210423172659919.png" alt="image-20210423172659919"></p>
+<p><img src="/2021/07/16/Git%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/image-20210423172723375.png" alt="image-20210423172723375"></p>
+<ul>
+<li>图中左侧为工作区，右侧为版本库。在版本库中标记为 “index” 的区域是暂存区（stage/index），标记为 “master” 的是 master 分支所代表的目录树。</li>
+<li>图中我们可以看出此时 “HEAD” 实际是指向 master 分支的一个”游标”。所以图示的命令中出现 HEAD 的地方可以用 master 来替换。</li>
+<li>图中的 objects 标识的区域为 Git 的对象库，实际位于 “.git/objects” 目录下，里面包含了创建的各种对象及内容。</li>
+<li>当对工作区修改（或新增）的文件执行 <strong>git add</strong> 命令时，暂存区的目录树被更新，同时工作区修改（或新增）的文件内容被写入到对象库中的一个新的对象中，而该对象的 ID 被记录在暂存区的文件索引中。</li>
+<li>当执行提交操作（git commit）时，暂存区的目录树写到版本库（对象库）中，master 分支会做相应的更新。即 master 指向的目录树就是提交时暂存区的目录树。</li>
+<li>当执行 <strong>git reset HEAD</strong> 命令时，暂存区的目录树会被重写，被 master 分支指向的目录树所替换，但是工作区不受影响。</li>
+<li>当执行 <strong>git rm –cached <file></file></strong> 命令时，会直接从暂存区删除文件，工作区则不做出改变。</li>
+<li>当执行 <strong>git checkout .</strong> 或者 <strong>git checkout – <file></file></strong> 命令时，会用暂存区全部或指定的文件替换工作区的文件。这个操作很危险，会清除工作区中未添加到暂存区的改动。</li>
+<li>当执行 <strong>git checkout HEAD .</strong> 或者 <strong>git checkout HEAD <file></file></strong> 命令时，会用 HEAD 指向的 master 分支中的全部或者部分文件替换暂存区和以及工作区中的文件。这个命令也是极具危险性的，因为不但会清除工作区中未提交的改动，也会清除暂存区中未提交的改动。</li>
+</ul>
+<h2 id="8-Git-创建仓库"><a href="#8-Git-创建仓库" class="headerlink" title="8.Git 创建仓库"></a>8.Git 创建仓库</h2><h4 id="8-1-获取-Git-仓库"><a href="#8-1-获取-Git-仓库" class="headerlink" title="8.1 获取 Git 仓库"></a>8.1 获取 Git 仓库</h4><pre class=" language-sh"><code class="language-sh">#要使用Git对我们的代码进行版本控制，首先需要获得Git仓库
+#获取Git仓库通常有两种方式：
+1.在本地初始化一个Git仓库
+2.从远程仓库克隆</code></pre>
+<h5 id="8-1-1-从本地初始化一个-Git-仓库"><a href="#8-1-1-从本地初始化一个-Git-仓库" class="headerlink" title="8.1.1 从本地初始化一个 Git 仓库"></a>8.1.1 从本地初始化一个 Git 仓库</h5><pre class=" language-sh"><code class="language-sh">#1.使用当前目录作为Git仓库，我们只需使它初始化。
+git init
+
+#2.使用我们指定目录作为Git仓库。
+git init newrepo
+
+初始化后，会在 newrepo 目录下会出现一个名为 .git 的目录，所有 Git 需要的数据和资源都存放在这个目录中。
+如果当前目录下有几个文件想要纳入版本控制，需要先用 git add 命令告诉 Git 开始对这些文件进行跟踪，然后提交：
+$ git add *.c
+$ git add README
+$ git commit -m '初始化项目版本'
+**注：** 在 Linux 系统中，commit 信息使用单引号 **'**，Windows 系统，commit 信息使用双引号 **"**。
+所以在 git bash 中 **git commit -m '提交说明'** 这样是可以的，在 Windows 命令行中就要使用双引号 **git commit -m "提交说明"**。</code></pre>
+<p><img src="/2021/07/16/Git%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/image-20210323150352960.png" alt="image-20210323150352960"></p>
+<h5 id="8-1-2-从远程仓库克隆"><a href="#8-1-2-从远程仓库克隆" class="headerlink" title="8.1.2 从远程仓库克隆"></a>8.1.2 从远程仓库克隆</h5><p>​ 可以通过 Git 提供的命令从远程仓库进行克隆，将远程仓库克隆到本地<br>​ 命令形式为：git clone 远程 Git 仓库地址</p>
+<pre class=" language-sh"><code class="language-sh">#我们使用 git clone 从现有 Git 仓库中拷贝项目（类似 svn checkout）。克隆仓库的命令格式为：
+git clone <repo>
+
+#如果我们需要克隆到指定的目录，可以使用以下命令格式：
+git clone <repo> <directory>
+
+#执行该命令后，会在当前目录下创建一个名为grit的目录，其中包含一个 .git 的目录，用于保存下载下来的所有版本记录。如果要自己定义要新建的项目目录名称，可以在上面的命令末尾指定新的名字：
+$ git clone git://github.com/schacon/grit.git mygrit</code></pre>
+<p><img src="/2021/07/16/Git%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/image-20210323151342389.png" alt="image-20210323151342389"></p>
+<h2 id="9-Git-基本操作"><a href="#9-Git-基本操作" class="headerlink" title="9. Git 基本操作"></a>9. Git 基本操作</h2><p><strong>Git 的工作就是创建和保存你项目的快照及与之后的快照进行对比。</strong></p>
+<p><img src="/2021/07/16/Git%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/image-20210426083747674.png" alt="image-20210426083747674"></p>
+<h3 id="9-1-git-add-文件加入暂存区"><a href="#9-1-git-add-文件加入暂存区" class="headerlink" title="9.1 git add(文件加入暂存区)"></a>9.1 git add(文件加入暂存区)</h3><p><strong>git add</strong> 命令可将该文件添加到暂存区。</p>
+<p><strong>1.添加一个或多个文件到暂存区</strong></p>
+<pre class=" language-sh"><code class="language-sh">git add [file1] [file2] ...</code></pre>
+<p><img src="/2021/07/16/Git%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/image-20210426084951892.png" alt="image-20210426084951892"></p>
+<p><strong>2.添加指定目录到暂存区，包括子目录</strong></p>
+<pre class=" language-sh"><code class="language-sh">git add [dir]</code></pre>
+<p><strong>3.添加当前目录下的所有文件到暂存区</strong></p>
+<pre class=" language-sh"><code class="language-sh">git add .</code></pre>
+<h3 id="9-2-git-status-查看暂存区文件状态"><a href="#9-2-git-status-查看暂存区文件状态" class="headerlink" title="9.2 git status(查看暂存区文件状态)"></a>9.2 git status(查看暂存区文件状态)</h3><p><strong>git status 命令用于查看在你上次提交之后是否有对文件进行再次修改。</strong></p>
+<pre class=" language-sh"><code class="language-sh">#查看的比较详细，其中绿色的表示提交的加入暂存区的文件
+git status</code></pre>
+<p><img src="/2021/07/16/Git%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/image-20210426085755483.png" alt="image-20210426085755483"></p>
+<p><strong>git status -s 通常我们使用 -s 参数来获得简短的输出结果</strong></p>
+<pre class=" language-sh"><code class="language-sh">git status -s</code></pre>
+<p><img src="/2021/07/16/Git%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/image-20210426085947648.png" alt="image-20210426085947648"></p>
+<h3 id="9-3-git-diff-比较文件不同"><a href="#9-3-git-diff-比较文件不同" class="headerlink" title="9.3 git diff (比较文件不同)"></a>9.3 git diff (比较文件不同)</h3><p><strong>1.git diff：是查看 workspace 与 index 的差别的。</strong></p>
+<pre class=" language-sh"><code class="language-sh">git diff</code></pre>
+<p>我们新建文件 6.txt 然后加入 11111 文件然后使用 git add .提交到暂存区,然后在文件后面加上 2222，在使用 git diff 命令</p>
+<p>修改前：</p>
+<p><img src="/2021/07/16/Git%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/image-20210426102530373.png" alt="image-20210426102530373"></p>
+<p>修改后：</p>
+<p><img src="/2021/07/16/Git%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/image-20210426102827982.png" alt="image-20210426102827982"></p>
+<p>结果：</p>
+<p><img src="/2021/07/16/Git%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/image-20210426103012238.png" alt="image-20210426103012238"></p>
+<pre class=" language-sh"><code class="language-sh">#结果说明：
+第一行表示结果为git格式的diff
+diff --git a/6.txt b/6.txt
+进行比较的是,a版本的6(即变动前)和b版本的6(即变动后)。
+
+第二行表示两个版本的git哈希值和最后的六位数字是对象的模式
+index 56b6510..a05a48c 100644
+index区域的56b6510对象,与工作目录区域的a05a48c对象进行比较 后面100代表普通文件，644代表文件具有的权限（同linux文件权限）
+
+第三四行表示进行比较的两个文件
+--- a/6.txt
++++ b/6.txt
+"-“表示变动前的版本，”+++"表示变动后的版本。
+
+第五行表示代码变动的位置用两个@作为起首和结束
+@@ -1 +1 @@
+"-1,7″分成三个部分：减号表示第一个文件(即f1)，"1″表示第1行，“7″表示连续7行。
+合在一起，就表示下面是第一个文件第1行做了开始
+同样的，”+1″表示变动后，成为第二个文件从第1行开始
+
+第三部分是变动的具体内容
+-11111
+\ No newline at end of file
++111112222
+\ No newline at end of file
+变动的行，每一行最前面的标志位：“-”代表第一个文件删除的行用红色表示，“+”表示第二个文件新增的行用绿色表示，如果是白色无标志表示该行无变动。
+
+
+</code></pre>
+<p><strong>2.git diff –cached 或 git diff –staged [file] 是查看 index 与 local repositorty 的差别的。</strong></p>
+<p><strong>3.git diff HEAD：是查看 workspace 和 local repository 的差别的。（HEAD 指向的是 local repository 中最新提交的版本</strong></p>
+<p><strong>4.$ git diff test</strong><br><strong>上面的命令会显示你当前工作目录与另外一个叫’test’分支的差别。</strong></p>
+<p><strong>5.$ git diff HEAD – ./lib</strong><br><strong>上面这条命令会显示你当前工作目录下的 lib 目录与上次提交之间的差别(或者更准确的 说是在当前分支)。</strong></p>
+<p><strong>6.$ git diff –stat</strong><br><strong>上面的命令会统计一下有哪些文件被改动，有多少行被改动</strong></p>
+<h3 id="9-4-git-commit-提交到版本库"><a href="#9-4-git-commit-提交到版本库" class="headerlink" title="9.4 git commit(提交到版本库)"></a>9.4 git commit(提交到版本库)</h3><p><strong>1.git commit 命令将暂存区内容添加到本地仓库中。</strong></p>
+<pre class=" language-sh"><code class="language-sh">#提交暂存区到本地仓库中:[message] 可以是一些备注信息。
+git commit -m [message]</code></pre>
+<p><strong>2.提交多个指定文件到仓库区：</strong></p>
+<pre class=" language-sh"><code class="language-sh">$ git commit [file1] [file2] ... -m [message]</code></pre>
+<p><strong>3.-a 参数设置修改文件后不需要执行 git add 命令，直接来提交</strong></p>
+<pre class=" language-sh"><code class="language-sh">#加了-a，在 commit 的时候，能帮你省一步 git add ，但也只是对修改和删除文件有效， 新文件还是要 git add，不然就是 untracked 状态
+$ git commit -a -m [message]</code></pre>
+<p><strong>4.Git 工作目录下文件的状态</strong></p>
+<ul>
+<li><strong>#Git 工作目录下的文件存在两种状态：</strong></li>
+<li><strong>untracked 未跟踪（未被纳入版本控制）</strong></li>
+<li><strong>tracked 已跟踪（被纳入版本控制）</strong></li>
+<li><strong>Unmodified 未修改状态</strong></li>
+<li><strong>Modified 已修改状态</strong></li>
+<li><strong>Staged 已暂存状态</strong></li>
+<li><strong>这些文件的状态会随着我们执行 Git 的命令发生变化</strong></li>
+</ul>
+<h3 id="9-5-git-reset"><a href="#9-5-git-reset" class="headerlink" title="9.5 git reset"></a>9.5 git reset</h3><p><strong>git reset 并不会产生 commits 它只是改变了当前 HEAD 指向的 commits。</strong></p>
+<h4 id="9-5-1-git-reset-–soft"><a href="#9-5-1-git-reset-–soft" class="headerlink" title="9.5.1 git reset –soft"></a>9.5.1 git reset –soft</h4><pre class=" language-sh"><code class="language-sh">#跳转到指定版本、不还原缓存区、不还原工作区。
+$ git  reset --soft 版本号          # 整个项目回退到指定版本
+
+
+$ git reset HEAD^            # 整个项目回退所有内容到上一个版本
+$ git reset HEAD^ hello.php  # 回退 hello.php 文件的版本到上一个版本
+
+$ git reset HEAD~1           # 整个项目回退所有内容到上一个版本
+$ git reset HEAD~1 hello.php # 回退 hello.php 文件的版本到上一个版本
+
+</code></pre>
+<h4 id="9-5-2-git-reset-–mixed"><a href="#9-5-2-git-reset-–mixed" class="headerlink" title="9.5.2 git reset –mixed"></a>9.5.2 git reset –mixed</h4><pre class=" language-sh"><code class="language-sh"># --mixed 为默认，  跳转到指定版本、还原缓存区、不还原工作区。
+$ git  reset  版本号          # 整个项目回退到指定版本</code></pre>
+<h4 id="9-5-3-git-reset-–hard"><a href="#9-5-3-git-reset-–hard" class="headerlink" title="9.5.3 git reset –hard"></a>9.5.3 git reset –hard</h4><pre class=" language-sh"><code class="language-sh"># --head 跳转到指定版本、还原缓存区、还原工作区（原理：将本库的头指针全部重置到指定版本）
+HEAD 就是当前活跃分支的游标。形象的记忆就是：你现在在哪儿，HEAD 就指向哪儿，所以 Git 才知道你在那儿！ 不过 HEAD
+并非只能指向分支的最顶端（时间节点距今最近的那个），实际上它可以指向任何一个节点，它就是 Git 内部用来追踪当前位置的东东。
+
+$ git  reset  --hard 版本号</code></pre>
+<h3 id="9-6-git-rm-命令"><a href="#9-6-git-rm-命令" class="headerlink" title="9.6 git rm 命令"></a>9.6 git rm 命令</h3><h5 id="9-6-1-git-rm-文件名字-删除暂存区文件和工作区文件"><a href="#9-6-1-git-rm-文件名字-删除暂存区文件和工作区文件" class="headerlink" title="9.6.1 git rm 文件名字(删除暂存区文件和工作区文件)"></a>9.6.1 git rm 文件名字(删除暂存区文件和工作区文件)</h5><pre class=" language-sh"><code class="language-sh">#1. git rm 文件名字 将文件从暂存区和工作区中删除,注意文件夹要加 git rm -r 文件
+删除完工作区文件后查询状态显示删除,因为删除的是暂存区数据所以,这时候需要提交操作才能提交到本地仓库影响到本地仓库
+git rm <file></code></pre>
+<h5 id="9-6-2-git-rm-–cached-文件名字-删除暂存区文件"><a href="#9-6-2-git-rm-–cached-文件名字-删除暂存区文件" class="headerlink" title="9.6.2 git rm –cached 文件名字(删除暂存区文件)"></a>9.6.2 git rm –cached 文件名字(删除暂存区文件)</h5><pre class=" language-sh"><code class="language-sh">git rm 文件名字 --cached</code></pre>
+<h3 id="9-7git-mv-命令"><a href="#9-7git-mv-命令" class="headerlink" title="9.7git mv 命令"></a>9.7git mv 命令</h3><h4 id="9-7-1-git-mv-oldFile-new-File-移动或重命名"><a href="#9-7-1-git-mv-oldFile-new-File-移动或重命名" class="headerlink" title="9.7.1 git mv oldFile new File(移动或重命名)"></a>9.7.1 git mv oldFile new File(移动或重命名)</h4><pre class=" language-sh"><code class="language-sh">#将修改指定文件名字
+git mv [file] [newfile]</code></pre>
+<h4 id="9-7-2-git-mv-f-oldFile-new-File-当文件名已经存在时候强制移动或重命名"><a href="#9-7-2-git-mv-f-oldFile-new-File-当文件名已经存在时候强制移动或重命名" class="headerlink" title="9.7.2 git mv -f oldFile new File(当文件名已经存在时候强制移动或重命名)"></a>9.7.2 git mv -f oldFile new File(当文件名已经存在时候强制移动或重命名)</h4><pre class=" language-sh"><code class="language-sh">#注意这时候这个文件会覆盖原本的文件
+git mv -f [file] [newfile]</code></pre>
+<h3 id="9-8-git-remote-命令"><a href="#9-8-git-remote-命令" class="headerlink" title="9.8 git remote 命令"></a>9.8 git remote 命令</h3><h4 id="9-8-1-git-remote-查看远端仓库"><a href="#9-8-1-git-remote-查看远端仓库" class="headerlink" title="9.8.1 git remote(查看远端仓库)"></a>9.8.1 git remote(查看远端仓库)</h4><p>​ 如果想查看已经配置的远程仓库服务器，可以运行 <strong>git remote</strong> 命令。 它会列出指定的每一个远程服务器的简写。 如果已经克隆了远程仓库，那么至少应该能看到 origin ，这是 Git 克隆的仓库服务器的默认名字</p>
+<pre class=" language-sh"><code class="language-sh">#查看远端仓库
+git remote
+
+origin: Git里面的origin就是一个名字，它是在你clone一个托管在Github上代码库时，git为你默认创建的指向这个远程代码库的标签。</code></pre>
+<p><img src="/2021/07/16/Git%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/image-20210330221453369.png" alt="image-20210330221453369"></p>
+<pre class=" language-sh"><code class="language-sh">#看详细版本信息
+git remote -v</code></pre>
+<p><img src="/2021/07/16/Git%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/image-20210330221648280.png" alt="image-20210330221648280"></p>
+<h4 id="9-8-2git-remote-rm-移除无效的远程仓库"><a href="#9-8-2git-remote-rm-移除无效的远程仓库" class="headerlink" title="9.8.2git remote rm(移除无效的远程仓库)"></a>9.8.2git remote rm(移除无效的远程仓库)</h4><p>如果因为一些原因想要移除一个远程仓库 ，可以使用 git remote rm</p>
+<pre class=" language-sh"><code class="language-sh">#删除远端仓库 注意：此命令只是从本地移除远程仓库的记录，并不会真正影响到远程仓库
+git remote rm 仓库名字</code></pre>
+<p><img src="/2021/07/16/Git%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/image-20210330221900433.png" alt="image-20210330221900433"></p>
+<h4 id="9-8-3-git-remote-add-添加远程仓库"><a href="#9-8-3-git-remote-add-添加远程仓库" class="headerlink" title="9.8.3 git remote add (添加远程仓库)"></a>9.8.3 git remote add (添加远程仓库)</h4><p>运行 git remote add &lt; shortname&gt; &lt; url&gt; 添加一个新的远程 Git 仓库，同时指定一个可以引用的简写</p>
+<pre class=" language-sh"><code class="language-sh">#添加远端仓库,仓库名称默认是origin 当我们添加远端仓库时候可以指定这个仓库名字 git remote add 仓库名字别名 仓库地址
+git remote add 仓库名字(仓库起一个别名) 仓库地址url
+例子:
+git remote add origin https://gitee.com/qaqxidu/demo1.git</code></pre>
+<p><img src="/2021/07/16/Git%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/image-20210330222027857.png" alt="image-20210330222027857"></p>
+<h4 id="9-8-34-git-remote-rename-重命名远程仓库"><a href="#9-8-34-git-remote-rename-重命名远程仓库" class="headerlink" title="9.8.34 (git remote rename)重命名远程仓库"></a>9.8.34 (git remote rename)重命名远程仓库</h4><pre class=" language-sh"><code class="language-sh"># 修改仓库名
+git remote rename old_name new_name</code></pre>
+<h3 id="9-9-git-fetch-pull-push"><a href="#9-9-git-fetch-pull-push" class="headerlink" title="9.9 git fetch/pull/push"></a>9.9 git fetch/pull/push</h3><p>抓取：</p>
+<p>​ git fetch 是从远程仓库获取最新版本到本地仓库，不会自动 merge</p>
+<pre class=" language-sh"><code class="language-sh"># 1.抓取到本地仓库
+git fetch origin master
+#2. 进行合并 合并后工作区才回出现拉取下来的文件
+git merge origin/master</code></pre>
+<p>拉取：</p>
+<p>git pull 是从远程仓库获取最新版本并 merge 到本地仓库</p>
+<pre class=" language-sh"><code class="language-sh">#命令（本地工作区直接最出现拉取下来的文件）下面命令表示，取回 origin/master 分支，再与本地的 master 分支合并,如果远程分支是与当前分支合并，则冒号后面的部分可以省略。同理推送时候也是
+git pull origin master:master
+
+**注意：**如果当前本地仓库不是从远程仓库克隆，而是本地创建的仓库，并且仓库中存在文件，此时再从远程仓库拉取文件的时候会报错（fatal: refusing to merge unrelated histories ），解决此问题可以在git pull命令后加入参数–allow-unrelated-histories
+当执行git中的“git pull origin master –allow-unrelated-histories”命令时，会出现“ couldn’t find remote ref –allow-unrelated-histories”的错误，
+输入如下命令即可解决：
+git pull --rebase origin master
+</code></pre>
+<p>概念说明:</p>
+<pre class=" language-sh"><code class="language-sh">#你clone本地仓库的时候被clone的远端仓库默认被称为 origin。 所以如果你想向/从这个远端仓库push/pull 的时候，用 origin 指代这个远端仓库。
+你可以在 .git/config 之中进行修改
+事实上 git push origin master 的意思是 git push origin master:master （将本地的 master 分支推送至远端的 master 分支，如果没有就新建一个）</code></pre>
+<p>推送:</p>
+<p>您可以将新的更改推<code>master</code>回到<code>origin</code>：</p>
+<pre class=" language-sh"><code class="language-sh">#命令形式：git push [remote-name] [branch-name]
+git push origin master</code></pre>
+<h2 id="10-Git-分支管理"><a href="#10-Git-分支管理" class="headerlink" title="10.Git 分支管理"></a>10.Git 分支管理</h2><p>​ <strong>几乎每一种版本控制系统都以某种形式支持分支。使用分支意味着你可以从开发主线上分离开来，然后在不影响主线的同时继续工作。</strong></p>
+<p>​ <strong>有人把 Git 的分支模型称为必杀技特性，而正是因为它，将 Git 从版本控制系统家族里区分出来。</strong></p>
+<h4 id="10-1-查看分支命令"><a href="#10-1-查看分支命令" class="headerlink" title="10.1 查看分支命令"></a>10.1 查看分支命令</h4><pre class=" language-sh"><code class="language-sh">#1.列出所有本地分支 其中绿色表示单前分支是master
+git branch
+
+#2.列出所有远程分支(其中前面带origin的就是远程分支)
+git branch -r
+
+#3.列出所有本地分支和远程分支
+git branch -a</code></pre>
+<p><img src="/2021/07/16/Git%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/image-20210330225142644.png" alt="image-20210330225142644"></p>
+<h4 id="10-2-创建分支"><a href="#10-2-创建分支" class="headerlink" title="10.2 创建分支"></a>10.2 创建分支</h4><pre class=" language-sh"><code class="language-sh">#创建分支
+git branch 分支名字</code></pre>
+<p><img src="/2021/07/16/Git%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/image-20210330225448687.png" alt="image-20210330225448687"></p>
+<h4 id="10-3-切换分支"><a href="#10-3-切换分支" class="headerlink" title="10.3 切换分支"></a>10.3 切换分支</h4><pre class=" language-sh"><code class="language-sh">#切换分支切换分支到master2,下图表示当前分支是在master上然后我们切换到master2上
+#当你切换分支的时候，Git 会用该分支的最后提交的快照替换你的工作目录的内容， 所以多个分支不需要多个目录。
+git checkout master2
+
+#表示创建master3分支并切换到这个分支
+git checkout -b master3</code></pre>
+<p><img src="/2021/07/16/Git%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/image-20210330225704543.png" alt="image-20210330225704543"></p>
+<h4 id="10-4-删除分支"><a href="#10-4-删除分支" class="headerlink" title="10.4 删除分支"></a>10.4 删除分支</h4><pre class=" language-sh"><code class="language-sh">#删除指定分支 不能删除当前分支
+git branch -d 删除的分支名字
+
+#如果要删除的分支中进行了一些开发动作（提交到远端），此时执行上面的删除命令并不会删除分支，如果坚持要删除此分支，可以将命令中的-d参数改为-D
+git branch -D 删除的分支名字
+
+#在删除远端的一个分支：
+git push origin :newBranch (分支名前的冒号代表删除)
+或 git push origin --delete 分支名字</code></pre>
+<h4 id="10-5-合并分支"><a href="#10-5-合并分支" class="headerlink" title="10.5 合并分支"></a>10.5 合并分支</h4><pre class=" language-sh"><code class="language-sh">#合并分支
+git merge 当前要合并的分支名字
+
+说明:
+有时候合并操作不会如此顺利。 如果你在两个不同的分支中，对同一个文件的同一个部分进行了不同的修改，Git 就没办法合并它们，同时会提示文件冲突。此时需要我们打开冲突的文件并修复冲突内容，最后执行git add命令来标识冲突已解决
+#一般建议在做这样的操作之前, 新建一个 branch 当作备份. 但就算是你不备份, git reflog 也会是最后一道强大的防护网, 通过它能够回到最近的一系列 repo 的状态上.</code></pre>
+<h4 id="10-6-推送至远程仓库分支"><a href="#10-6-推送至远程仓库分支" class="headerlink" title="10.6 推送至远程仓库分支"></a>10.6 推送至远程仓库分支</h4><pre class=" language-sh"><code class="language-sh">#把master2分支推送到远端仓库
+git push origin master2</code></pre>
+<p><img src="/2021/07/16/Git%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/image-20210330225927391.png" alt="image-20210330225927391"></p>
+<h4 id="10-7-合并分支"><a href="#10-7-合并分支" class="headerlink" title="10.7 合并分支"></a>10.7 合并分支</h4><pre class=" language-sh"><code class="language-sh">#合并分支
+git merge 当前要合并的分支名字
+
+说明:
+有时候合并操作不会如此顺利。 如果你在两个不同的分支中，对同一个文件的同一个部分进行了不同的修改，Git 就没办法合并它们，同时会提示文件冲突。此时需要我们打开冲突的文件并修复冲突内容，最后执行git add命令来标识冲突已解决
+#建议在做这样的操作之前, 新建一个 branch 当作备份. 但就算是你不备份, git reflog 也会是最后一道强大的防护网, 通过它能够回到最近的一系列 repo 的状态上.</code></pre>
+<h4 id="10-8-综合使用"><a href="#10-8-综合使用" class="headerlink" title="10.8 综合使用"></a>10.8 综合使用</h4><p>​ <strong>因为创建、合并和删除分支非常快，所以 Git 鼓励你使用分支完成某个任务，合并后再删掉分支，这和直接在<code>master</code>分支上工作效果是一样的，但过程更安全。</strong></p>
+<p><strong>所以我们一般都是在新建自己的分支然后开发完成后把自己分支合并到主的 master 分支上</strong></p>
+<pre class=" language-sh"><code class="language-sh">#1.首先，我们创建dev分支，然后切换到dev分支
+$ git checkout -b dev
+Switched to a new branch 'dev'
+
+#2.git checkout命令加上-b参数表示创建并切换，相当于以下两条命令：
+$ git branch dev
+$ git checkout dev
+Switched to branch 'dev'
+
+#3.然后，用git branch命令查看当前分支：
+$ git branch
+* dev
+  master
+
+#4.git branch命令会列出所有分支，当前分支前面会标一个*号。
+#然后，我们就可以在dev分支上正常提交，比如对readme.txt做个修改，加上一行：
+Creating a new branch is quick.
+
+#5.然后提交：
+$ git add readme.txt
+$ git commit -m "branch test"
+[dev fec145a] branch test
+ 1 file changed, 1 insertion(+)
+
+#6.现在，dev分支的工作完成，我们就可以切换回master分支：
+$ git checkout master
+Switched to branch 'master'
+
+#7.切换回master分支后，再查看一个readme.txt文件，刚才添加的内容不见了！因为那个提交是在dev分支上，而master分支此刻的提交点并没有变：
+git-br-on-master
+
+#8.现在，我们把dev分支的工作成果合并到master分支上：
+$ git merge dev
+Updating d17efd8..fec145a
+Fast-forward
+ readme.txt |    1 +
+ 1 file changed, 1 insertion(+)
+
+#9.git merge命令用于合并指定分支到当前分支。合并后，再查看readme.txt的内容，就可以看到，和dev分支的最新提交是完全一样的。
+注意到上面的Fast-forward信息，Git告诉我们，这次合并是“快进模式”，也就是直接把master指向dev的当前提交，所以合并速度非常快。</code></pre>
+<h2 id="11-查看提交历史"><a href="#11-查看提交历史" class="headerlink" title="11.查看提交历史"></a>11.查看提交历史</h2><p><strong>Git 提交历史一般常用两个命令：</strong></p>
+<ul>
+<li><strong>git log</strong> - 查看历史提交记录。</li>
+<li><strong>git blame <file></file></strong> - 以列表形式查看指定文件的历史修改记录。</li>
+</ul>
+<h3 id="11-1-git-log"><a href="#11-1-git-log" class="headerlink" title="11.1 git log"></a>11.1 git log</h3><h4 id="11-1-1-git-log"><a href="#11-1-1-git-log" class="headerlink" title="11.1.1 git log"></a>11.1.1 git log</h4><pre class=" language-sh"><code class="language-sh">#命令列出历史提交记录如下默认是根据时间从上往下倒序
+git log
+
+#根据时间倒序查看
+git log --reverse</code></pre>
+<h4 id="11-1-2-git-log-–oneline-简洁版日志"><a href="#11-1-2-git-log-–oneline-简洁版日志" class="headerlink" title="11.1.2 git log –oneline(简洁版日志)"></a>11.1.2 git log –oneline(简洁版日志)</h4><pre class=" language-sh"><code class="language-sh">#查看历史记录的简洁的版本。
+git log --oneline</code></pre>
+<p><img src="/2021/07/16/Git%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/image-20210426142940501.png" alt="image-20210426142940501"></p>
+<h4 id="11-1-2-git-log-–graph-开启了拓扑图选项"><a href="#11-1-2-git-log-–graph-开启了拓扑图选项" class="headerlink" title="11.1.2 git log –graph(开启了拓扑图选项)"></a>11.1.2 git log –graph(开启了拓扑图选项)</h4><pre class=" language-sh"><code class="language-sh">#开启了拓扑图选项
+git log --graph</code></pre>
+<p><img src="/2021/07/16/Git%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/image-20210426143200275.png" alt="image-20210426143200275"></p>
+<h4 id="11-1-13-git-log-–author-查看某个账号的日志记录"><a href="#11-1-13-git-log-–author-查看某个账号的日志记录" class="headerlink" title="11.1.13 git log –author(查看某个账号的日志记录)"></a>11.1.13 git log –author(查看某个账号的日志记录)</h4><pre class=" language-sh"><code class="language-sh">#查看指定用户提交记录
+git log --author
+例子：git log --author 15036563343@139.com</code></pre>
+<h4 id="11-1-14-git-reflog"><a href="#11-1-14-git-reflog" class="headerlink" title="11.1.14. git reflog"></a>11.1.14. git reflog</h4><pre class=" language-sh"><code class="language-sh">#可以查看所有分支的所有操作记录（包括已经被删除的 commit 记录和 reset 的操作）</code></pre>
+<h3 id="11-2-git-blame"><a href="#11-2-git-blame" class="headerlink" title="11.2 git blame"></a>11.2 git blame</h3><p>如果要查看指定文件的修改记录可以使用 git blame 命令，格式如下：</p>
+<pre class=" language-sh"><code class="language-sh">git blame <file></code></pre>
+<p><img src="/2021/07/16/Git%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/image-20210426143614939.png" alt="image-20210426143614939"></p>
+<h2 id="12-Git-标签"><a href="#12-Git-标签" class="headerlink" title="12. Git 标签"></a>12. Git 标签</h2><p><strong>标签介绍</strong></p>
+<p>​ <strong>发布一个版本时，我们通常先在版本库中打一个标签（tag），这样就唯一确定了打标签时刻的版本。将来无论什么时候，取某个标签的版本，就是把那个打标签的时刻的历史版本取出来。所以，标签也是版本库的一个快照。</strong></p>
+<p><strong>-a 选项意为”创建一个带注解的标签”。 不用 -a 选项也可以执行的，但它不会记录这标签是啥时候打的，谁打的，也不会让你添加个标签的注解。 我推荐一直创建带注解的标签。</strong></p>
+<pre class=" language-sh"><code class="language-sh">Git有commit，为什么还要引入tag？
+
+"请把上周一的那个版本打包发布，commit号是6a5819e…"
+
+"一串乱七八糟的数字不好找！"
+
+如果换一个办法：
+
+"请把上周一的那个版本打包发布，版本号是v1.2"
+
+"好的，按照tag v1.2查找commit就行！"
+
+所以，tag就是一个让人容易记住的有意义的名字，它跟某个commit绑在一起。</code></pre>
+<h3 id="12-1-列出所有标签"><a href="#12-1-列出所有标签" class="headerlink" title="12.1 列出所有标签"></a>12.1 列出所有标签</h3><pre class=" language-sh"><code class="language-sh">#列出所有tag
+ git tag</code></pre>
+<h3 id><a href="#" class="headerlink" title></a><img src="/2021/07/16/Git%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/image-20210426165612095.png" alt="image-20210426165612095"></h3><h3 id="12-2-查看标签信息"><a href="#12-2-查看标签信息" class="headerlink" title="12.2 查看标签信息"></a>12.2 查看标签信息</h3><pre class=" language-sh"><code class="language-sh"> # 查看tag信息
+ git show [tag]</code></pre>
+<p><img src="/2021/07/16/Git%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/image-20210421134607934.png" alt="image-20210421134607934"></p>
+<h3 id="12-3-创建新标签"><a href="#12-3-创建新标签" class="headerlink" title="12.3 创建新标签"></a>12.3 创建新标签</h3><pre class=" language-sh"><code class="language-sh">#新建一个tag
+git tag -a <tagname> -m "runoob.com标签"
+
+#如果我们忘了给某个提交打标签，又将它发布了，我们可以给它追加标签。
+git tag -a v0.9 -m "runoob.com标签" 版本号</code></pre>
+<p><img src="/2021/07/16/Git%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/image-20210421134701333.png" alt="image-20210421134701333"></p>
+<h3 id="12-4-将标签推送至远程仓库"><a href="#12-4-将标签推送至远程仓库" class="headerlink" title="12.4 将标签推送至远程仓库"></a>12.4 将标签推送至远程仓库</h3><pre class=" language-sh"><code class="language-sh">#提交指定tag
+git push origin [tag]</code></pre>
+<h3 id="12-5-检出标签"><a href="#12-5-检出标签" class="headerlink" title="12.5 检出标签"></a>12.5 检出标签</h3><pre class=" language-sh"><code class="language-sh">#新建一个分支，指向某个tag
+git checkout -b [branch] [tag]</code></pre>
+<h3 id="12-6-删除标签"><a href="#12-6-删除标签" class="headerlink" title="12.6 删除标签"></a>12.6 删除标签</h3><pre class=" language-sh"><code class="language-sh"># 删除本地tag
+$ git tag -d [tag]
+# 删除远程tag
+$ git push origin :refs/tags/[tag]</code></pre>
+<h2 id="13-HEAD-说明"><a href="#13-HEAD-说明" class="headerlink" title="13.HEAD 说明"></a>13.HEAD 说明</h2><pre class=" language-sh"><code class="language-sh">1.在[版本回退])里，你已经知道，每次提交，Git都把它们串成一条时间线，这条时间线就是一个分支。截止到目前，只有一条时间线，在Git里，这个分支叫主分支，即`master`分支。`HEAD`严格来说不是指向提交，而是指向`master`，`master`才是指向提交的，所以，`HEAD`指向的就是当前分支。
+一开始的时候，`master`分支是一条线，Git用`master`指向最新的提交，再用`HEAD`指向`master`，就能确定当前分支，以及当前分支的提交点：
+
+2.每次提交，master分支都会向前移动一步，这样，随着你不断提交，master分支的线也越来越长：
+当我们创建新的分支，例如dev时，Git新建了一个指针叫dev，指向master相同的提交，再把HEAD指向dev，就表示当前分支在dev上：
+
+3.你看，Git创建一个分支很快，因为除了增加一个dev指针，改改HEAD的指向，工作区的文件都没有任何变化！
+不过，从现在开始，对工作区的修改和提交就是针对dev分支了，比如新提交一次后，dev指针往前移动一步，而master指针不变：</code></pre>
+<h2 id="14-解决冲突问题"><a href="#14-解决冲突问题" class="headerlink" title="14.解决冲突问题"></a>14.解决冲突问题</h2><h3 id="14-1-说明"><a href="#14-1-说明" class="headerlink" title="14.1 说明"></a>14.1 说明</h3><pre class=" language-sh"><code class="language-sh">#复制代码提交时发生冲突,你能解释冲突是如何产生的吗?你是如 何解决的?
+
+#方法1
+1.如果开发时候远端修改了一个文件的第一行,而本地修改了一个文件第二行,那么可以直接用本地分支和远端分支进行合并就好了。
+如果远端修改第一行数据，本地也修改第一行数据,那么合并就会冲突,这时候需要手动进行删除分隔符然后手动合并。
+
+#方法2
+2.发生冲突，也可以使用命令:
+通过git stash命令，把工作区的修改提交到栈区，目的是保存工作区的修改； 通过git pull命令，拉取远程分支上的代码并合并到本地分支，目的是消除冲突； 通过git stash pop命令，把保存在栈区的修改部分合并到最新的工作空间中,然后在提交
+一般什么情况下 我们会用到git stash命令？
+命令git stash是把工作区修改的内容存储在栈区。
+#说明：如果本地修改的这个文件第二行,而远端和修改这个文件的第二行,那么我么即使把本地第二行做的修改提交到stash中然后把远端第二行更新下来,然后在把栈的数据合并到本地时候,这时候也会提示合并冲突也需要进行手动修改.
+
+git stash: 备份当前的工作区的内容，从最近的一次提交中读取相关内容，让工作区保证和上次提交的内容一致。同时，将当前的工作区内容保存到Git栈中。
+git stash pop: 从Git栈中读取最近一次保存的内容，恢复工作区的相关内容。由于可能存在多个Stash的内容，所以用栈来管理，pop会从最近的一个stash中读取内容并恢复。
+git stash list: 显示Git栈内的所有备份，可以利用这个列表来决定从那个地方恢复。
+git stash clear: 清空Git栈。此时使用gitg等图形化工具会发现，原来stash的哪些节点都消失了。
+
+以下几种情况会使用到它：
+解决冲突文件时，会先执行git stash，然后解决冲突； 遇到紧急开发任务但目前任务不能提交时，会先执行git stash，然后进行紧急任务的开发，然后 通过git stash pop取出栈区的内容继续开发； 切换分支时，当前工作空间内容不能提交时，会先执行git stash再进行分支切换
+
+#3.强行冲掉之前的分支,用本地文件强行覆盖远程文件
+git push origin [分支名称] --force
+
+#4.如果使用merge我们提交到了远端了怎么撤回?
+ 步骤1：先回退本地版本
+ git reset --soft 版本号
+ 步骤2：使用--force强行提交会用本地版本覆盖远端的版本
+ git push origin 分支 --force
+</code></pre>
+<h2 id="15-常见错误解决"><a href="#15-常见错误解决" class="headerlink" title="15.常见错误解决"></a>15.常见错误解决</h2><h3 id="1-git-push-u-和-git-branch-–set-upstream-to-区别"><a href="#1-git-push-u-和-git-branch-–set-upstream-to-区别" class="headerlink" title="1.git push -u 和 git branch –set-upstream-to 区别"></a>1.git push -u 和 git branch –set-upstream-to 区别</h3><pre class=" language-sh"><code class="language-sh"># git push -u origin/master master
+表示先把远程分支origin/master和本地分支master建立一个关联通道,然后在执行 push操作
+
+# git branch  --set-upstream-to=origin/master master
+表示把远程分支origin/master 和本地分支建立一个关联
+
+也就是：git push -u origin mybranch1 相当于 git push origin mybranch1 + git branch --set-upstream-to=origin/mybranch1 mybranch1
+当然只有我们有多个远程仓库或者,没有关联远程仓库时候才会这样进行操作,因为这样先执行本地分支和远程分支关联,否则会提示远程分支为被跟踪。</code></pre>
+<p>解释说明：</p>
+<p>​ 一般只有同时存在多个远程仓库时才会用到–set-upstream。每个 git branch 可以有个对应的 upstream。假设你有两个 upstream，分别叫 server1 和 server2，本地 master branch 的 upstream 是 server1 上的 master，那么当你不带参数直接输入 git pull 或者 git push 时，默认是对 server1 进行 pull/push。如果你成功运行”git push -u server2 master”，那么除了本地 branch 会被 push 到 server2 之外，还会把 server2 设置成 upstream。</p>
+<p>​ $ git push -u origin master</p>
+<p>​ 如果当前分支与多个主机存在追踪关系，那么这个时候-u 选项会指定一个默认主机，这样后面就可以不加任何参数使用 git push。</p>
+<p>​ 上面命令将本地的 master 分支推送到 origin 主机，同时制定 origin 为默认主机,后面可以不加任何参数使用 git push 了<br>不带任何参数 git push 默认只推送当前分支，这种叫做 simple 方式此外,还有一种 matching 的方式,会推送所有对应的远程分支的本地分支，git2.0 之前默认采用的是 matching 方法,现在默采用 simple 方式</p>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Mr Zhao</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://mrzhao.life/2021/07/16/Git%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/">https://mrzhao.life/2021/07/16/Git%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Mr Zhao</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">
+                                    <span class="chip bg-color">版本控制</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="qq,wechat,weibo" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2021/07/16/Git%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Git知识总结">
+                        
+                        <span class="card-title">Git知识总结</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            1.简介1.1git 定义​ git 是一个免费的分布式版本控制系统，旨在快速高效地处理从小型到大型项目的所有事物。
+不管是软件开发还是什么行业，代码、文档都不是一次性写完的，都需要有无数次的修改，无数个版本迭代，而 Git 是一个很好的版
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-16
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/" class="post-category">
+                                    版本控制
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">
+                        <span class="chip bg-color">版本控制</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/07/09/CSS/css3%E6%B8%90%E5%8F%98%E9%A2%9C%E8%89%B2/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="css3渐变颜色">
+                        
+                        <span class="card-title">css3渐变颜色</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            CSS3 渐变色1. 线性渐变.box1 {
+  /** 渐变属性是设置在background-image上的 */
+  /** 线性渐变 linear-gradient 默认从上到下渐变 */
+  background-image: li
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-09
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
+                                </a>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/css/" class="post-category">
+                                    css
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                        <span class="chip bg-color">前端</span>
+                    </a>
+                    
+                    <a href="/tags/css/">
+                        <span class="chip bg-color">css</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">Mr Zhao</a>
+            |&nbsp;<a href="https://beian.miit.gov.cn/" target="_blank">豫ICP备20021275号</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis"><!--
+ * @Description: 
+ * @Author: Zhao
+ * @Date: 2020-08-04 08:30:06
+ * @LastEditTime: 2020-08-04 09:50:58
+ * @LastEditors:  
+-->
+
+    <a href="https://github.com/xiaozhaolaodi" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1813845216" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1813845216" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
