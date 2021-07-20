@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="flex弹性布局, Mr.Zhao">
+    <meta name="keywords" content="JS中常见的几种报错类型, Mr.Zhao">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>flex弹性布局 | Mr.Zhao</title>
+    <title>JS中常见的几种报错类型 | Mr.Zhao</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -286,12 +286,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">flex弹性布局</h1>
+                    <h1 class="description center-align post-title">JS中常见的几种报错类型</h1>
                 </div>
             </div>
         </div>
@@ -412,16 +412,8 @@
                                 <span class="chip bg-color">前端</span>
                             </a>
                         
-                            <a href="/tags/css/">
-                                <span class="chip bg-color">css</span>
-                            </a>
-                        
-                            <a href="/tags/flex/">
-                                <span class="chip bg-color">flex</span>
-                            </a>
-                        
-                            <a href="/tags/%E5%B8%83%E5%B1%80/">
-                                <span class="chip bg-color">布局</span>
+                            <a href="/tags/js/">
+                                <span class="chip bg-color">js</span>
                             </a>
                         
                     </div>
@@ -436,12 +428,8 @@
                                 前端
                             </a>
                         
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/css/" class="post-category">
-                                css
-                            </a>
-                        
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/css/%E5%B8%83%E5%B1%80/" class="post-category">
-                                布局
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/js/" class="post-category">
+                                js
                             </a>
                         
                     </div>
@@ -453,7 +441,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-03-15
+                    2021-02-15
                 </div>
                 
 
@@ -462,7 +450,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    583
+                    413
                 </div>
                 
 
@@ -474,63 +462,27 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="弹性布局"><a href="#弹性布局" class="headerlink" title="弹性布局"></a>弹性布局</h3><h4 id="1-父级节点"><a href="#1-父级节点" class="headerlink" title="1.父级节点"></a>1.父级节点</h4><pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.parentNode</span> </span><span class="token punctuation">{</span>
-  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token comment" spellcheck="true">/* 
-如果节点设置了此css属性，相当于在它的所有子节点上添加了浮动属性；
-如果父级节点使用了弹性布局，那么它的子结点就不需要添加float属性
-*/</span></code></pre>
-<h4 id="2-父节点的其他属性"><a href="#2-父节点的其他属性" class="headerlink" title="2.父节点的其他属性"></a>2.父节点的其他属性</h4><h5 id="（1）justify-content"><a href="#（1）justify-content" class="headerlink" title="（1）justify-content"></a>（1）justify-content</h5><pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.parentNode</span> </span><span class="token punctuation">{</span>
-  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
-  <span class="token property">justify-content</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 设置子元素水平居中 */</span>
-  <span class="token property">justify-content</span><span class="token punctuation">:</span> space-between<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 设置子元素两端对齐 */</span>
-  <span class="token property">justify-content</span><span class="token punctuation">:</span> space-around<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 设置子元素都有独自的左右距离 */</span>
-  <span class="token property">justify-content</span><span class="token punctuation">:</span> flex-start<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 设置子元素水平居左，此为默认属性 */</span>
-  <span class="token property">justify-content</span><span class="token punctuation">:</span> flex-end<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 设置子元素水平居右 */</span>
-<span class="token punctuation">}</span></code></pre>
-<h5 id="（2）align-items"><a href="#（2）align-items" class="headerlink" title="（2）align-items"></a>（2）align-items</h5><pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.parentNode</span> </span><span class="token punctuation">{</span>
-  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
-  <span class="token property">align-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 设置子元素垂直居中 */</span>
-  <span class="token property">align-items</span><span class="token punctuation">:</span> flex-start<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 设置子元素垂直居上 */</span>
-  <span class="token property">align-items</span><span class="token punctuation">:</span> flex-end<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 设置子元素垂直居下 */</span>
-<span class="token punctuation">}</span></code></pre>
-<h5 id="（3）align-content"><a href="#（3）align-content" class="headerlink" title="（3）align-content"></a>（3）align-content</h5><pre class=" language-css"><code class="language-css"><span class="token comment" spellcheck="true">/* 此属性只对多行子元素生效 */</span>
-<span class="token selector"><span class="token class">.parentNode</span> </span><span class="token punctuation">{</span>
-  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
-  <span class="token property">align-content</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 设置子元素垂直居中 */</span>
-  <span class="token property">align-content</span><span class="token punctuation">:</span> flex-start<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 设置子元素垂直居上 */</span>
-  <span class="token property">align-content</span><span class="token punctuation">:</span> flex-end<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 设置子元素垂直居下 */</span>
-  <span class="token property">align-content</span><span class="token punctuation">:</span> stretch<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 拉伸 ，默认值 */</span>
-<span class="token punctuation">}</span></code></pre>
-<h5 id="（4）flex-direction"><a href="#（4）flex-direction" class="headerlink" title="（4）flex-direction"></a>（4）flex-direction</h5><pre class=" language-css"><code class="language-css"><span class="token comment" spellcheck="true">/* 此属性设置子元素的排列方向 */</span>
-<span class="token selector"><span class="token class">.parentNode</span> </span><span class="token punctuation">{</span>
-  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
-  <span class="token property">flex-direction</span><span class="token punctuation">:</span> row<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 子元素横向排列 */</span>
-  <span class="token property">flex-direction</span><span class="token punctuation">:</span> row-reverse<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 子元素横向倒序排列 */</span>
-  <span class="token property">flex-direction</span><span class="token punctuation">:</span> column<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 子元素纵向排列 */</span>
-  <span class="token property">flex-direction</span><span class="token punctuation">:</span> column-reverse<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 子元素纵向倒序排列 */</span>
-<span class="token punctuation">}</span>
-<span class="token comment" spellcheck="true">/* 这里需要注意：当你设置了子元素纵向排列方向后，前两个属性也会随着改变方向！！！ */</span></code></pre>
-<h5 id="（5）flex-wrap"><a href="#（5）flex-wrap" class="headerlink" title="（5）flex-wrap"></a>（5）flex-wrap</h5><pre class=" language-css"><code class="language-css"><span class="token comment" spellcheck="true">/* 此属性设置子元素是否正常换行 */</span>
-<span class="token selector"><span class="token class">.parentNode</span> </span><span class="token punctuation">{</span>
-  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
-  <span class="token property">flex-wrap</span><span class="token punctuation">:</span> wrap<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 子元素正常换行 */</span>
-  <span class="token property">flex-wrap</span><span class="token punctuation">:</span> nowrap<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 子元素不换行 默认值 */</span>
-<span class="token punctuation">}</span>
-<span class="token comment" spellcheck="true">/* 这里需要注意：当你设置了子元素纵向排列方向后，前两个属性也会随着改变方向！！！ */</span></code></pre>
-<h5 id="（6）flex-flow"><a href="#（6）flex-flow" class="headerlink" title="（6）flex-flow"></a>（6）flex-flow</h5><pre class=" language-css"><code class="language-css"><span class="token comment" spellcheck="true">/* 设置子元素纵向排列正常换行 */</span>
-<span class="token selector"><span class="token class">.parentNode</span> </span><span class="token punctuation">{</span>
-  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
-  <span class="token property">flex-flow</span><span class="token punctuation">:</span> column warp<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token comment" spellcheck="true">/* 相当于（4）和（5）的组合 */</span></code></pre>
-<h4 id="3-子元素上的属性"><a href="#3-子元素上的属性" class="headerlink" title="3.子元素上的属性"></a>3.子元素上的属性</h4><pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.children</span> </span><span class="token punctuation">{</span>
-  <span class="token property">flex</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 用来设置每个节点的宽度，子元素在划分父级宽度的时候，会先排除固定的宽度 */</span>
-  <span class="token property">align-self</span><span class="token punctuation">:</span> flex-start<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 此属性可以覆盖父节点的align-items的垂直排列 */</span>
-  <span class="token property">flex-grow</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 设置元素的放大比例，默认值为0 */</span>
-  <span class="token property">order</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 规定子元素的排列顺序，数值越小越靠前 默认值为0 */</span>
-<span class="token punctuation">}</span></code></pre>
+                <h2 id="JS-中常见的几种报错类型"><a href="#JS-中常见的几种报错类型" class="headerlink" title="JS 中常见的几种报错类型"></a>JS 中常见的几种报错类型</h2><h3 id="1、SyntaxError（语法错误）"><a href="#1、SyntaxError（语法错误）" class="headerlink" title="1、SyntaxError（语法错误）"></a>1、SyntaxError（语法错误）</h3><p>解析代码时发生的语法错误：</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">var</span> 1a<span class="token punctuation">;</span>                 <span class="token comment" spellcheck="true">//Uncaught SyntaxError: Invalid or unexpected token 变量名错误</span>
+console<span class="token punctuation">.</span>log <span class="token string">'hello'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">//Uncaught SyntaxError: Unexpected string 缺少括号</span></code></pre>
+<h3 id="2、ReferenceError（引用错误）"><a href="#2、ReferenceError（引用错误）" class="headerlink" title="2、ReferenceError（引用错误）"></a>2、ReferenceError（引用错误）</h3><pre class=" language-js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment" spellcheck="true">//Uncaught ReferenceError: a is not defined 引用了一个不存在的变量</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">//Uncaught ReferenceError: Invalid left-hand side in assignment 将变量赋值给一个无法被赋值的对象</span></code></pre>
+<h3 id="3、RangeError（范围错误）"><a href="#3、RangeError（范围错误）" class="headerlink" title="3、RangeError（范围错误）"></a>3、RangeError（范围错误）</h3><pre class=" language-js"><code class="language-js"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//Uncaught RangeError: Invalid array length 超出有效范围</span></code></pre>
+<h3 id="4、TypeError（类型错误）"><a href="#4、TypeError（类型错误）" class="headerlink" title="4、TypeError（类型错误）"></a>4、TypeError（类型错误）</h3><p>变量或参数不是预期类型，比如，对字符串、布尔值、数值等原始类型的值使用 new 命令，就会抛出这种错误，因为 new 命令的参数应该是一个构造函数。</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">123</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//Uncaught TypeError: 123 is not a function</span></code></pre>
+<p>调用对象不存在的方法</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">var</span> a
+a<span class="token punctuation">.</span><span class="token function">aa</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//Uncaught TypeError: Cannot read property 'aa' of undefined</span></code></pre>
+<h3 id="5、URLError（URL-错误）"><a href="#5、URLError（URL-错误）" class="headerlink" title="5、URLError（URL 错误）"></a>5、URLError（URL 错误）</h3><p>与 url 相关函数参数不正确，主要是 <strong>encodeURI()、decodeURI()、encodeURIComponent()、decodeURIComponent()、escape()和 unescape()</strong> 这六个函数。</p>
+<pre class=" language-js"><code class="language-js"><span class="token function">decodeURI</span><span class="token punctuation">(</span><span class="token string">'%2'</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//Uncaught URIError: URI malformed</span></code></pre>
+<h3 id="6、EvalError（eval-错误）"><a href="#6、EvalError（eval-错误）" class="headerlink" title="6、EvalError（eval 错误）"></a>6、EvalError（eval 错误）</h3><p>eval 函数没有被正确执行</p>
+<h3 id="7、手动抛出异常"><a href="#7、手动抛出异常" class="headerlink" title="7、手动抛出异常"></a>7、手动抛出异常</h3><p>以上这 6 种派生错误，连同原始的 Error 对象，都是构造函数。开发者可以使用它们，人为生成错误对象的实例。</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">'出错了！'</span><span class="token punctuation">)</span>
+<span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">RangeError</span><span class="token punctuation">(</span><span class="token string">'出错了，变量超出有效范围！'</span><span class="token punctuation">)</span>
+<span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">TypeError</span><span class="token punctuation">(</span><span class="token string">'出错了，变量类型无效！'</span><span class="token punctuation">)</span></code></pre>
+<blockquote>
+<p>上面代码表示新建错误对象的实例，实质就是手动抛出错误。可以看到，错误对象的构造函数接受一个参数，代表错误提示信息（message）。</p>
+</blockquote>
 
             </div>
             <hr/>
@@ -556,7 +508,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://mrzhao.life/2021/03/15/CSS/css-flex/">https://mrzhao.life/2021/03/15/CSS/css-flex/</a>
+                    <a href="https://mrzhao.life/2021/02/15/JS/js%E8%BF%90%E8%A1%8C%E4%B8%AD%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF/">https://mrzhao.life/2021/02/15/JS/js%E8%BF%90%E8%A1%8C%E4%B8%AD%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -598,16 +550,8 @@
                                     <span class="chip bg-color">前端</span>
                                 </a>
                             
-                                <a href="/tags/css/">
-                                    <span class="chip bg-color">css</span>
-                                </a>
-                            
-                                <a href="/tags/flex/">
-                                    <span class="chip bg-color">flex</span>
-                                </a>
-                            
-                                <a href="/tags/%E5%B8%83%E5%B1%80/">
-                                    <span class="chip bg-color">布局</span>
+                                <a href="/tags/js/">
+                                    <span class="chip bg-color">js</span>
                                 </a>
                             
                         </div>
@@ -653,71 +597,6 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/03/25/JS/js%E5%88%A4%E6%96%AD%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="js判断数据类型的方式">
-                        
-                        <span class="card-title">js判断数据类型的方式</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            首先定义几种类型的变量：
-let num = 100;
-let str = 'hahaha';
-let flag = true;
-let obj = {
-    name: 'xiaozhao',
-    age: 11
-};
-let ar
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-25
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    前端
-                                </a>
-                            
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/js/" class="post-category">
-                                    js
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/js/">
-                        <span class="chip bg-color">js</span>
-                    </a>
-                    
-                    <a href="/tags/%E9%9D%A2%E8%AF%95/">
-                        <span class="chip bg-color">面试</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
                 <a href="/2021/03/03/Vue/vue-MQTT/">
                     <div class="card-image">
                         
@@ -734,9 +613,9 @@ let ar
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-03
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-03
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -762,6 +641,64 @@ let ar
                     
                     <a href="/tags/%E9%80%9A%E8%AE%AF/">
                         <span class="chip bg-color">通讯</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/02/13/websocket-topic/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="websocket知识了解">
+                        
+                        <span class="card-title">websocket知识了解</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            websocket 是什么？
+webscoket 是 HTML5 提供的协议，支持持久连接，而 HTTP 不支持持久连接，实现了浏览器和客户端的全双工通信，也就是在浏览器向服务器发送数据的同时服务器也可以向浏览器发送数据，是一种在单个 TC
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-13
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E9%9D%A2%E8%AF%95/">
+                        <span class="chip bg-color">面试</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%80%9A%E8%AE%AF/">
+                        <span class="chip bg-color">通讯</span>
+                    </a>
+                    
+                    <a href="/tags/websocket/">
+                        <span class="chip bg-color">websocket</span>
                     </a>
                     
                 </div>
