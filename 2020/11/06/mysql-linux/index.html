@@ -890,21 +890,32 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
     <!-- 搜索遮罩框 -->
 <div id="searchModal" class="modal">
-    <div class="modal-content">
-        <div class="search-header">
-            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
-            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
-                   class="search-input">
-        </div>
-        <div id="searchResult"></div>
+  <div class="modal-content">
+    <div class="search-header">
+      <span class="title"
+        ><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span
+      >
+      <input
+        type="search"
+        id="searchInput"
+        name="s"
+        placeholder="请输入搜索的关键字"
+        class="search-input"
+      />
     </div>
+    <div id="searchResult"></div>
+  </div>
 </div>
 
 <script src="/js/search.js"></script>
 <script type="text/javascript">
-$(function () {
-    searchFunc("/search.xml", 'searchInput', 'searchResult');
-});
+  $(function () {
+    searchFunc(
+      "/search.json",
+      'searchInput',
+      'searchResult'
+    )
+  })
 </script>
 
     <!-- 回到顶部按钮 -->
