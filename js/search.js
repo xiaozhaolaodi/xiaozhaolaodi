@@ -1,20 +1,24 @@
 var searchFunc = function (path, search_id, content_id) {
-    'use strict';
+
+    // 'use strict';
     $.ajax({
         url: path,
-        dataType: "xml",
-        success: function (xmlResponse) {
+        dataType: "json",
+        success: function (datas) {
             // get the contents from search data
-            var datas = $("entry", xmlResponse).map(function () {
-                return {
-                    title: $("title", this).text(),
-                    content: $("content", this).text(),
-                    url: $("url", this).text()
-                };
-            }).get();
+            // var datas = $("entry", xmlResponse).map(function () {
+            //     return {
+            //         title: $("title", this).text(),
+            //         content: $("content", this).text(),
+            //         url: $("url", this).text()
+            //     };
+            // }).get();
+            // console.log(xmlResponse);
+
             var $input = document.getElementById(search_id);
             var $resultContent = document.getElementById(content_id);
             $input.addEventListener('input', function () {
+                alert('触发')
                 var str = '<ul class=\"search-result-list\">';
                 var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
                 $resultContent.innerHTML = "";
